@@ -9,7 +9,7 @@ export default function HomePage({ books }) {
 
   // Filtere die Bücher basierend auf dem Suchbegriff
   const filteredBooks = books.filter((book) =>
-    book.title.toLowerCase().includes(searchTerm.toLowerCase()) // filtert Buch mit entsprechendem Titel
+    book.toLowerCase().includes(searchTerm.toLowerCase()) // filtert Buch mit entsprechendem Titel
   );
 
   // function handleSearch(event) {

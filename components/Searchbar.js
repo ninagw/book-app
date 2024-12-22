@@ -18,7 +18,7 @@ export default function SearchBar({ searchTerm, onChange }) {
       type="text"
       id="searchTerm"
       name="searchTerm"
-      placeholder="..."
+      placeholder="Search..."
       aria-label="searchbar"
       value={searchTerm}
       onChange={onChange}
