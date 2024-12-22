@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{\"/_app\":[\"static/media/ff2196f1ce0ba75c-s.p.woff2\"]},\"app\":{},\"appUsingSizeAdjust\":false,\"pagesUsingSizeAdjust\":true}"
+self.__NEXT_FONT_MANIFEST='{"pages":{"/_app":["static/media/ff2196f1ce0ba75c-s.p.woff2"]},"app":{},"appUsingSizeAdjust":false,"pagesUsingSizeAdjust":true}';
