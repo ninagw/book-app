@@ -4,13 +4,20 @@ import SearchBar from "@/components/Searchbar";
 
 export default function HomePage({ books }) {
   const [searchTerm, setSearchTerm] = useState("");
-  console.log("SEARCHTERM", searchTerm);
 
+  // const filteredBooks = books.filter((book) =>
+  //   book.author.toLowerCase().includes(searchTerm.toLowerCase()) // filtert Buch mit entsprechendem Titel
+  // );
 
-  // Filtere die Bücher basierend auf dem Suchbegriff
-  const filteredBooks = books.filter((book) =>
-    book.toLowerCase().includes(searchTerm.toLowerCase()) // filtert Buch mit entsprechendem Titel
-  );
+  // Filtert Bücher basierend auf dem Suchbegriff
+  const filteredBooks = books.filter(({ title, genre, publishYear, author }) => {
+      const titleMatch = title.toLowerCase().includes(searchTerm);
+      const genreMatch = genre.toLowerCase().includes(searchTerm);
+      const yearMatch = publishYear.toString().includes(searchTerm);
+      const authorMatch = author.toLowerCase().includes(searchTerm);
+
+      return titleMatch || genreMatch || yearMatch || authorMatch;
+    })
 
   // function handleSearch(event) {
   //   const { value } = event.target;
@@ -34,20 +41,12 @@ export default function HomePage({ books }) {
         <h1>Book Hunting</h1>
       </header>
       <main>
-        <p>Searching for: {searchTerm}</p> {/* Zeigt den Suchstatus */}
+        <p>Searching for: {searchTerm}</p> {/* // Zeigt den Suchstatus */}
         <SearchBar
           searchTerm={searchTerm}
           onChange={(event) => {
-            console.log("Input value:", event.target.value); // Überprüfe den Wert
             setSearchTerm(event.target.value.toLowerCase())}} // Aktualisiere Zustand
-
-          // setSearchTerm={setSearchTerm}
-          // handleSearchClick={() => handleSearchClick()}
         />
-
-        {/* <button type="button" onClick={handleToggleFilterModal}>
-          Enter
-        </button> */}
         <BookList books={filteredBooks} />
       </main>
     </>

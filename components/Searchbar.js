@@ -11,7 +11,6 @@ const SearchInput = styled.input`
 `;
 
 export default function SearchBar({ searchTerm, onChange }) {
-  console.log("searchTerm", searchTerm);
 
   return (
     <SearchInput
