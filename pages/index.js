@@ -2,7 +2,7 @@ import { useState } from "react";
 import BookList from "@/components/BookList";
 import SearchBar from "@/components/Searchbar";
 
-export default function HomePage({ books }) {
+export default function HomePage({ books, booksData }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   // const filteredBooks = books.filter((book) =>
@@ -47,7 +47,9 @@ export default function HomePage({ books }) {
           onChange={(event) => {
             setSearchTerm(event.target.value.toLowerCase())}} // Aktualisiere Zustand
         />
-        <BookList books={filteredBooks} />
+        <BookList books={filteredBooks} booksData={booksData}
+        // books={searchTerm.length === 0 ? filteredBooks : foundBooks}
+        />
       </main>
     </>
   );

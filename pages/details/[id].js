@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export default function BookDetailsPage({books}) {
+export default function BookDetailsPage({books, booksData}) {
 const router = useRouter();
 const { id } = router.query;
 

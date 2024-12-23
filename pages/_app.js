@@ -1,7 +1,7 @@
 import GlobalStyle from "../styles";
 import books from "../lib/books.json";
 import useLocalStorageState from "use-local-storage-state";
-import {useState} from "react";
+// import { useState } from "react";
 
 const initialBooksData = books.map((book) => {
   return { id: book.id };
@@ -9,7 +9,7 @@ const initialBooksData = books.map((book) => {
 });
 
 export default function App({ Component, pageProps }) {
-  const [booksInfo, setBooksInfo] = useLocalStorageState("books-info", {
+  const [booksData, setBooksData] = useLocalStorageState("books-data", {
     defaultValue: initialBooksData,
   });
   // const [animationActiveBookmark, setAnimationActiveBookmark] = useState(false);
@@ -64,11 +64,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} books={books} 
+      <Component {...pageProps} books={books} booksData={booksData}
         // handleToggleBookmark={handleToggleBookmark}
         // handleToggleAlreadyRead={handleToggleAlreadyRead}
         // handleToggleCurrentlyReading={handleToggleCurrentlyReading}
-        // booksInfo={booksInfo}
         // animationActiveAlreadyRead={animationActiveAlreadyRead}
         // animationActiveBookmark={animationActiveBookmark}
         // setAnimationActiveAlreadyRead={setAnimationActiveAlreadyRead}
