@@ -14,7 +14,7 @@ if (!id) {
 const currentBook = books.find((book) => book.id === Number(id));
 
 console.log("BOOKS: ", books);
-console.log("ROUTER QUERY ID: ", id);
+console.log("ROUTER QUERY ID: ", id); // undefined at the moment
 
   if (!currentBook) {
     return <p>Book not found.</p>;
