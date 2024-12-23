@@ -13,7 +13,7 @@ const StyledList = styled.ul`
 
 export default function BookList({ books }) {
   const router = useRouter();
-  const { slug } = router.query;
+  const { id } = router.query;
 
   return (
     <StyledList>
@@ -26,7 +26,7 @@ export default function BookList({ books }) {
             src={book.cover}
             id={book.id}
             onClick={() => {
-              router.push(`/details/${slug}`);
+              router.push(`/details/${id}`);
             }}
           />
         </li>
