@@ -47,9 +47,7 @@ export default function HomePage({ books, booksData }) {
           onChange={(event) => {
             setSearchTerm(event.target.value.toLowerCase())}} // Aktualisiere Zustand
         />
-        <BookList books={filteredBooks} booksData={booksData}
-        // books={searchTerm.length === 0 ? filteredBooks : foundBooks}
-        />
+        <BookList books={filteredBooks} booksData={booksData} />
       </main>
     </>
   );

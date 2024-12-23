@@ -8,6 +8,8 @@ const initialBooksData = books.map((book) => {
   // return { id: book.id, isBookmarked: false, isAlreadyRead: false };
 });
 
+console.log(initialBooksData); // gibt book ids aus, funktioniert!
+
 export default function App({ Component, pageProps }) {
   const [booksData, setBooksData] = useLocalStorageState("books-data", {
     defaultValue: initialBooksData,
