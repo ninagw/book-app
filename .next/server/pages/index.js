@@ -1,0 +1,16 @@
+"use strict";(()=>{var e={};e.id=405,e.ids=[405,660],e.modules={1902:(e,t,r)=>{r.r(t),r.d(t,{config:()=>v,default:()=>b,getServerSideProps:()=>_,getStaticPaths:()=>P,getStaticProps:()=>f,reportWebVitals:()=>j,routeModule:()=>L,unstable_getServerProps:()=>k,unstable_getServerSideProps:()=>y,unstable_getStaticParams:()=>C,unstable_getStaticPaths:()=>q,unstable_getStaticProps:()=>w});var a={};r.r(a),r.d(a,{default:()=>HomePage});var s=r(7093),i=r(5244),n=r(1323),o=r(4003),l=r(3883),u=r(997),d=r(6689),c=r(7518),p=r.n(c),g=r(5675),h=r.n(g),x=r(1163);let m=p().ul.withConfig({componentId:"sc-9c56cf84-0"})`
+  padding-inline-start: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+`;function BookList({books:e}){let t=(0,x.useRouter)(),{slug:r}=t.query;return u.jsx(m,{children:e?.map(e=>u.jsx("li",{children:u.jsx(h(),{alt:e.title,height:100,width:70,src:e.cover,id:e.id,onClick:()=>{t.push(`/details/${r}`)}})},e.id))})}let S=p().input.withConfig({componentId:"sc-4414bfaa-0"})`
+  padding: 0.3rem;
+  font-size: 1rem;
+  display: flex;
+  margin: auto;
+  width: 60%;
+  border-style: none;
+  border-radius: var(--border-radius);
+`;function SearchBar({searchTerm:e,onChange:t}){return u.jsx(S,{type:"text",id:"searchTerm",name:"searchTerm",placeholder:"Search...","aria-label":"searchbar",value:e,onChange:t})}function HomePage({books:e}){let[t,r]=(0,d.useState)(""),a=e.filter(({title:e,genre:r,publishYear:a,author:s})=>{let i=e.toLowerCase().includes(t),n=r.toLowerCase().includes(t),o=a.toString().includes(t),l=s.toLowerCase().includes(t);return i||n||o||l});return(0,u.jsxs)(u.Fragment,{children:[u.jsx("header",{children:u.jsx("h1",{children:"Book Hunting"})}),(0,u.jsxs)("main",{children:[(0,u.jsxs)("p",{children:["Searching for: ",t]})," ",u.jsx(SearchBar,{searchTerm:t,onChange:e=>{r(e.target.value.toLowerCase())}}),u.jsx(BookList,{books:a})]})]})}let b=(0,n.l)(a,"default"),f=(0,n.l)(a,"getStaticProps"),P=(0,n.l)(a,"getStaticPaths"),_=(0,n.l)(a,"getServerSideProps"),v=(0,n.l)(a,"config"),j=(0,n.l)(a,"reportWebVitals"),w=(0,n.l)(a,"unstable_getStaticProps"),q=(0,n.l)(a,"unstable_getStaticPaths"),C=(0,n.l)(a,"unstable_getStaticParams"),k=(0,n.l)(a,"unstable_getServerProps"),y=(0,n.l)(a,"unstable_getServerSideProps"),L=new s.PagesRouteModule({definition:{kind:i.x.PAGES,page:"/index",pathname:"/",bundlePath:"",filename:""},components:{App:l.default,Document:o.default},userland:a})},2785:e=>{e.exports=require("next/dist/compiled/next-server/pages.runtime.prod.js")},6689:e=>{e.exports=require("react")},6405:e=>{e.exports=require("react-dom")},997:e=>{e.exports=require("react/jsx-runtime")},7518:e=>{e.exports=require("styled-components")},7147:e=>{e.exports=require("fs")},1017:e=>{e.exports=require("path")},2781:e=>{e.exports=require("stream")},9796:e=>{e.exports=require("zlib")}};var t=require("../webpack-runtime.js");t.C(e);var __webpack_exec__=e=>t(t.s=e),r=t.X(0,[859,885,163,201,675,883,3],()=>__webpack_exec__(1902));module.exports=r})();
