@@ -9,7 +9,7 @@ if (!id) {
     return <p>Loading...</p>;
   }
  
-const currentBook = books.find((book) => book.id === id);
+const currentBook = books.find((book) => book.id == id);
 
 console.log("BOOKS: ", books);
 console.log("ROUTER QUERY ID: ", id); // ERROR: undefined at the moment
@@ -24,7 +24,8 @@ console.log("ROUTER QUERY ID: ", id); // ERROR: undefined at the moment
         <h1>Book details</h1>
       </header>
       <main>
-        {/* <p>{currentBook.title}</p> */}
+        <p>Titel</p>
+        <p>{currentBook.title}</p>
       </main>
     </>
   );
