@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function BookDetailsPage({books, booksData}) {
 const router = useRouter();
@@ -24,7 +25,12 @@ console.log("ROUTER QUERY ID: ", id); // ERROR: undefined at the moment
         <h1>Book details</h1>
       </header>
       <main>
-        <p>Titel</p>
+        <Image
+            alt={currentBook.title}
+            height={100}
+            width={70}
+            src={currentBook.cover}
+            id={currentBook.id}/>
         <p>{currentBook.title}</p>
       </main>
     </>

@@ -26,7 +26,7 @@ export default function BookList({ books }) {
             src={book.cover}
             id={book.id}
             onClick={() => {
-              router.push(`/details/${id}`);
+              router.push(`/details/OL19096402W`);
             }}
           />
         </li>

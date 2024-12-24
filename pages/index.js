@@ -38,7 +38,7 @@ export default function HomePage({ books, booksData }) {
   return (
     <>
       <header>
-        <h1>Book Hunting</h1>
+        <h1>Book Shop</h1>
       </header>
       <main>
         <p>Searching for: {searchTerm}</p> {/* // Zeigt den Suchstatus */}
