@@ -1,7 +1,15 @@
 import { createGlobalStyle } from "styled-components";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Roboto } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: "700" });
+const robotoThin = Roboto({ subsets: ["latin"], weight: "100" });
+const robotoLight = Roboto({ subsets: ["latin"], weight: "300" });
+const robotoRegular = Roboto({ subsets: ["latin"], weight: "400" });
+const robotoMedium = Roboto({ subsets: ["latin"], weight: "500" });
+const robotoBold = Roboto({ subsets: ["latin"], weight: "700" });
+
+
+
 
 export default createGlobalStyle`
 :root{
@@ -22,9 +30,10 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: ${montserrat.style.fontFamily};
+    font-family: ${robotoLight.style.fontFamily};
     color: var(--text-color);
     background-color: var(--background-color);
+    padding: 0 20px;
   }
 
   header {
@@ -44,7 +53,16 @@ export default createGlobalStyle`
   }
 
   h1 {
+    font-family: ${montserrat.style.fontFamily};
     text-align: center;
     margin: 0;
+  }
+
+  h2 {
+    font-family: ${robotoMedium.style.fontFamily};
+  }
+
+  h3 {
+    font-family: ${robotoMedium.style.fontFamily};
   }
 `;

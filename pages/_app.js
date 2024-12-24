@@ -11,9 +11,10 @@ const initialBooksData = books.map((book) => {
 console.log(initialBooksData); // gibt book ids aus, funktioniert!
 
 export default function App({ Component, pageProps }) {
-  const [booksData, setBooksData] = useLocalStorageState("books-data", {
-    defaultValue: initialBooksData,
-  });
+  // const [booksData, setBooksData] = useLocalStorageState("books-data", {
+  //   defaultValue: initialBooksData,
+  // });
+
   // const [animationActiveBookmark, setAnimationActiveBookmark] = useState(false);
   // const [animationActiveAlreadyRead, setAnimationActiveAlreadyRead] =
   //   useState(false);
@@ -66,7 +67,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} books={books} booksData={booksData}
+      <Component {...pageProps} books={books} 
+        // booksData={booksData}
         // handleToggleBookmark={handleToggleBookmark}
         // handleToggleAlreadyRead={handleToggleAlreadyRead}
         // handleToggleCurrentlyReading={handleToggleCurrentlyReading}
