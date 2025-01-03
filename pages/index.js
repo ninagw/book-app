@@ -2,7 +2,7 @@ import { useState } from "react";
 import BookList from "@/components/BookList";
 import SearchBar from "@/components/Searchbar";
 
-export default function HomePage({ books, booksData }) {
+export default function HomePage({ books, booksData, handleToggleBookmark }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   // const filteredBooks = books.filter((book) =>
