@@ -7,7 +7,7 @@ const StyledList = styled.ul`
   display: flex;
   justify-content: space-around;
   padding-left: 0;
-  border-top: 1px solid var(--button-text-color);
+  border-top: 1.5px solid var(--text-color);
   margin-top: 20px;
   font-size: 1.2rem;
   margin: 0 auto;
@@ -20,7 +20,7 @@ const StyledList = styled.ul`
 
 const StyledListElement = styled.li`
   background-color: ${({ $isActive }) =>
-    $isActive ? "var(--pink-color)" : "var(--background-color)"};
+    $isActive ? "var(--text-color)" : "var(--background-color)"};
   width: 50%;
   padding: 7px 0px;
 `;
@@ -29,7 +29,8 @@ const NavigationLink = styled(Link)`
   text-decoration: none;
   display: block;
   text-align: center;
-  color: var(--secondary-color);
+  color: ${({ $isActive }) =>
+    $isActive ? "var(--background-color)" : "var(--text-color)"};
 `;
 
 export default function Navigation() {
@@ -38,8 +39,8 @@ export default function Navigation() {
   return (
     <nav>
         <StyledList>
-            <StyledListElement $isActive={router.pathname === "/"}><NavigationLink href="/">Book Shop</NavigationLink></StyledListElement>
-            <StyledListElement $isActive={router.pathname === "/wishlist"}><NavigationLink href="/wishlist">Wishlist</NavigationLink></StyledListElement>
+            <StyledListElement $isActive={router.pathname === "/"}><NavigationLink $isActive={router.pathname === "/"} href="/">Book Shop</NavigationLink></StyledListElement>
+            <StyledListElement $isActive={router.pathname === "/wishlist"}><NavigationLink $isActive={router.pathname === "/wishlist"} href="/wishlist">Wishlist</NavigationLink></StyledListElement>
         </StyledList>
     </nav>
   );
