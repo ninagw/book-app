@@ -1,5 +1,14 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
+import styled from "styled-components";
+
+const StyledBookmarkButton = styled.button`
+  background-color: ${({ $isBookmarked }) =>
+    $isBookmarked ? "var(--pink-color)" : "var(--lightgrey-color)"};
+  border-radius: 4px;
+  border: none;
+  padding: 0.4rem;
+`;
 
 export default function BookDetailsPage({books, booksData, handleToggleBookmark}) {
 const router = useRouter();
@@ -14,6 +23,7 @@ if (!id) {
   }
  
 const currentBook = books.find((book) => book.id === id);
+const currentBookData = booksData?.find((bookData) => bookData.id === id);
 
 console.log("BOOKS: ", books);
 console.log("ROUTER QUERY ID: ", id); // ERROR: only first book id
@@ -34,10 +44,11 @@ console.log("ROUTER QUERY ID: ", id); // ERROR: only first book id
             width={70}
             src={currentBook.cover}
             id={currentBook.id}/>
-        <button onToggle={handleToggleBookmark}
+        <StyledBookmarkButton 
+            onToggle={handleToggleBookmark}
             id={id}
-            isBookmarked={currentBookInfo?.isBookmarked}
-            booksInfo={booksInfo}>Book on Wishlist</button>
+            isBookmarked={currentBookData?.isBookmarked}
+            booksData={booksData}>Set book on wishlist</StyledBookmarkButton>
         <h3>{currentBook.title}</h3>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>
