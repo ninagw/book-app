@@ -13,11 +13,11 @@ const robotoBold = Roboto({ subsets: ["latin"], weight: "700" });
 
 export default createGlobalStyle`
 :root{
-  --background-color: #0D4028;
-  --text-color: #D1AF94; 
-  --lightgrey-color: #F1F0F0;
-  --pink-color: #DDA2B7;
-  // --button-text-color: #ffffff;
+  --background-color: #0D4028; // Dark Green
+  --text-color: #D1AF94; // BEIGE
+  --lightgrey-color: #F1F0F0; // LIGHTGREY
+  --pink-color: #DDA2B7; // POWDER PINK
+  --button-text-color: #ffffff; // WHITE
   // --accent-color: #078080; 
   // --secondary-color: #f45d48;
   --border-radius: 4px;

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
 import SearchBar from "@/components/Searchbar";
 
@@ -41,7 +42,7 @@ export default function HomePage({ books, booksData, handleToggleBookmark }) {
         <h1>Book Shop</h1>
       </header>
       <main>
-        <p>Searching for: {searchTerm}</p> {/* // Zeigt den Suchstatus */}
+        {/* <p>Searching for: {searchTerm}</p>  // Zeigt den Suchstatus */}
         <SearchBar
           searchTerm={searchTerm}
           onChange={(event) => {
@@ -49,6 +50,7 @@ export default function HomePage({ books, booksData, handleToggleBookmark }) {
         />
         <BookList books={filteredBooks} booksData={booksData} />
       </main>
+      <Navigation></Navigation>
     </>
   );
 }
