@@ -27,7 +27,7 @@ if (!id) {
   }
  
 console.log("BOOKS: ", books);
-console.log("ROUTER QUERY ID: ", id); // ERROR: only first book id
+console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart gecoded in Booklist componente
 
   if (!currentBook) {
     return <p>No books found.</p>;
@@ -51,7 +51,7 @@ console.log("ROUTER QUERY ID: ", id); // ERROR: only first book id
             onClick={() => handleToggleBookmark(id)}
             $isBookmarked={currentBookData?.isBookmarked}
             booksData={booksData}
-            // aria-label={isBookmarked ? "remove from my-wishlist" : "add to my-wishlist"}
+            aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
             >
               Set book on wishlist
             </StyledBookmarkButton>
