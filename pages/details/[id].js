@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -35,6 +36,7 @@ console.log("ROUTER QUERY ID: ", id); // ERROR: only first book id
   return (
     <>
       <header>
+        <Link href={`/`}>Back</Link>
         <h1>Book details</h1>
       </header>
       <main>
