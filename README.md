@@ -1,4 +1,4 @@
-# Book Journal App
+# Book App
 
 Project loading...
 
