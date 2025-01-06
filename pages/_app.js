@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const initialBooksData = books.map((book) => {
   return { id: book.id, isBookmarked: false, isAlreadyRead: false };
-  // return { id: book.id, isBookmarked: false, isAlreadyRead: false };
 });
 
 console.log(initialBooksData); // gibt book ids aus, funktioniert!
@@ -34,20 +33,20 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  // function handleToggleAlreadyRead(id) {
-  //   const currentBook = booksInfo.find((book) => book.id === id);
-  //   if (currentBook) {
-  //     setBooksInfo(
-  //       booksInfo.map((bookInfo) =>
-  //         bookInfo.id === id
-  //           ? { ...bookInfo, isAlreadyRead: !bookInfo.isAlreadyRead }
-  //           : bookInfo
-  //       )
-  //     );
-  //   } else {
-  //     setBooksInfo([...booksInfo, { id, isAlreadyRead: true }]);
-  //   }
-  // }
+  function handleToggleAlreadyRead(id) {
+    const currentBook = booksData.find((book) => book.id === id);
+    if (currentBook) {
+      setBooksData(
+        booksData.map((bookData) =>
+          bookData.id === id
+            ? { ...bookData, isAlreadyRead: !bookData.isAlreadyRead }
+            : bookData
+        )
+      );
+    } else {
+      setBooksData([...booksData, { id, isAlreadyRead: true }]);
+    }
+  }
 
   // function handleToggleCurrentlyReading(id) {
   //   const currentBook = booksInfo.find((book) => book.id === id);
@@ -71,7 +70,7 @@ export default function App({ Component, pageProps }) {
         books={books} 
         booksData={booksData}
         handleToggleBookmark={handleToggleBookmark}
-        // handleToggleAlreadyRead={handleToggleAlreadyRead}
+        handleToggleAlreadyRead={handleToggleAlreadyRead}
         // handleToggleCurrentlyReading={handleToggleCurrentlyReading}
         // animationActiveAlreadyRead={animationActiveAlreadyRead}
         // animationActiveBookmark={animationActiveBookmark}
