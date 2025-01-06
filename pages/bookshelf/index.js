@@ -23,8 +23,7 @@ export default function Bookshelf({
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isAlreadyRead
           );
-        } 
-        else if (filter === "currently-reading-books") {
+        } else if (filter === "currently-reading-books") {
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isCurrentlyReading
           );

@@ -33,6 +33,21 @@ export default function App({ Component, pageProps }) {
     }
   }
 
+  function handleToggleTBR(id) {
+    const currentBook = booksData.find((book) => book.id === id);
+    if (currentBook) {
+      setBooksData(
+        booksData.map((bookData) =>
+          bookData.id === id 
+            ? { ...bookData, isTBR: !bookData.isTBR }
+            : bookData
+      )
+      );
+    } else {
+      setBooksData([...booksData, {id, isTBR: true }]);
+    }
+  }
+
   function handleToggleAlreadyRead(id) {
     const currentBook = booksData.find((book) => book.id === id);
     if (currentBook) {
@@ -70,6 +85,7 @@ export default function App({ Component, pageProps }) {
         books={books} 
         booksData={booksData}
         handleToggleBookmark={handleToggleBookmark}
+        handleToggleTBR={handleToggleTBR}
         handleToggleAlreadyRead={handleToggleAlreadyRead}
         handleToggleCurrentlyReading={handleToggleCurrentlyReading}
         // animationActiveAlreadyRead={animationActiveAlreadyRead}
