@@ -5,7 +5,8 @@ import { useState } from "react";
 export default function Bookshelf({
     books,
     booksData,
-    handleToggleBookmark
+    handleToggleBookmark,
+    handleToggleAlreadyRead
 }) {
     const [filter, setFilter] = useState("wishlist-books");
     function handleFilter(newFilter) {
@@ -17,13 +18,13 @@ export default function Bookshelf({
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isBookmarked
           );
+        } else if (filter === "already-read-books") {
+          return booksData.find(
+            (booksData) => booksData.id === book.id && booksData.isAlreadyRead
+          );
         } 
-        // else if (filter === "already-read-books") {
-        //   return booksInfo.find(
-        //     (booksData) => booksData.id === book.id && booksData.isAlreadyRead
-        //   );
-        // } else if (filter === "currently-reading-books") {
-        //   return booksInfo.find(
+        // else if (filter === "currently-reading-books") {
+        //   return booksData.find(
         //     (booksData) => booksData.id === book.id && booksData.isCurrentlyReading
         //   );
         // }
@@ -45,12 +46,22 @@ export default function Bookshelf({
           >
             My wishlist
         </button>
+        <button
+            type="button"
+            aria-label="shows list of books you already read"
+            onClick={() => {
+              handleFilter("already-read-books");
+            }}
+            $isActive={filter === "already-read-books" ? true : false}
+          >
+            Books already read
+        </button>
         {filteredBooks?.length > 0 ? (
           <BookList
             books={filteredBooks}
             booksData={booksData}
             handleToggleBookmark={handleToggleBookmark}
-            // handleToggleAlreadyRead={handleToggleAlreadyRead}
+            handleToggleAlreadyRead={handleToggleAlreadyRead}
             // handleToggleCurrentlyReading={handleToggleCurrentlyReading}
             // setAnimationActiveBookmark={setAnimationActiveBookmark}
             // setAnimationActiveAlreadyRead={setAnimationActiveAlreadyRead}
