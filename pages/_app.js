@@ -48,20 +48,20 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  // function handleToggleCurrentlyReading(id) {
-  //   const currentBook = booksInfo.find((book) => book.id === id);
-  //   if (currentBook) {
-  //     setBooksInfo(
-  //       booksInfo.map((bookInfo) =>
-  //         bookInfo.id === id
-  //           ? { ...bookInfo, isCurrentlyReading: !bookInfo.isCurrentlyReading }
-  //           : bookInfo
-  //       )
-  //     );
-  //   } else {
-  //     setBooksInfo([...booksInfo, { id, isCurrentlyReading: true }]);
-  //   }
-  // }
+  function handleToggleCurrentlyReading(id) {
+    const currentBook = booksData.find((book) => book.id === id);
+    if (currentBook) {
+      setBooksData(
+        booksData.map((bookData) =>
+          bookData.id === id
+            ? { ...bookData, isCurrentlyReading: !bookData.isCurrentlyReading }
+            : bookData
+        )
+      );
+    } else {
+      setBooksInfo([...booksData, { id, isCurrentlyReading: true }]);
+    }
+  }
 
   return (
     <>
@@ -71,7 +71,7 @@ export default function App({ Component, pageProps }) {
         booksData={booksData}
         handleToggleBookmark={handleToggleBookmark}
         handleToggleAlreadyRead={handleToggleAlreadyRead}
-        // handleToggleCurrentlyReading={handleToggleCurrentlyReading}
+        handleToggleCurrentlyReading={handleToggleCurrentlyReading}
         // animationActiveAlreadyRead={animationActiveAlreadyRead}
         // animationActiveBookmark={animationActiveBookmark}
         // setAnimationActiveAlreadyRead={setAnimationActiveAlreadyRead}

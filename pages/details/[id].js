@@ -19,7 +19,7 @@ const StyledAlreadyReadButton = styled.button`
   padding: 0.4rem;
 `;
 
-export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleAlreadyRead}) {
+export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
 const router = useRouter();
 const { id } = router.query;
 const pathName = router.pathname;
