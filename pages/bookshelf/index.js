@@ -6,6 +6,7 @@ export default function Bookshelf({
     books,
     booksData,
     handleToggleBookmark,
+    handleToggleTBR,
     handleToggleAlreadyRead,
     handleToggleCurrentlyReading
 }) {
@@ -18,6 +19,10 @@ export default function Bookshelf({
         if (filter === "wishlist-books") {
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isBookmarked
+          );
+        } else if (filter === "to-be-read-books") {
+          return booksData.find(
+            (booksData) => booksData.id === book.id && booksData.isTBR
           );
         } else if (filter === "already-read-books") {
           return booksData.find(
@@ -48,6 +53,16 @@ export default function Bookshelf({
         </button>
         <button
             type="button"
+            aria-label="shows list of books on your TBR"
+            onClick={() => {
+              handleFilter("to-be-read-books");
+            }}
+            $isActive={filter === "to-be-read-books" ? true : false}
+          >
+            My TBR
+        </button>
+        <button
+            type="button"
             aria-label="shows list of books you already read"
             onClick={() => {
               handleFilter("already-read-books");
@@ -71,6 +86,7 @@ export default function Bookshelf({
             books={filteredBooks}
             booksData={booksData}
             handleToggleBookmark={handleToggleBookmark}
+            handleToggleTBR={handleToggleTBR}
             handleToggleAlreadyRead={handleToggleAlreadyRead}
             handleToggleCurrentlyReading={handleToggleCurrentlyReading}
             // setAnimationActiveBookmark={setAnimationActiveBookmark}
