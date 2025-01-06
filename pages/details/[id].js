@@ -11,7 +11,15 @@ const StyledBookmarkButton = styled.button`
   padding: 0.4rem;
 `;
 
-export default function BookDetailsPage({books, booksData, handleToggleBookmark}) {
+const StyledAlreadyReadButton = styled.button`
+  background-color: ${({ $isAlreadyRead }) =>
+    $isAlreadyRead ? "var(--pink-color)" : "var(--lightgrey-color)"};
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 0.4rem;
+`;
+
+export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleAlreadyRead}) {
 const router = useRouter();
 const { id } = router.query;
 const pathName = router.pathname;
@@ -54,16 +62,15 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
             >
               Set book on wishlist
-            </StyledBookmarkButton>
-            {/* <StyledBookmarkButton 
+        </StyledBookmarkButton>
+        <StyledAlreadyReadButton 
             type="button"
-            onClick={() => handleToggleBookmark(id)}
-            $isBookmarked={currentBookData?.isBookmarked}
-            booksData={booksData}
-            aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
+            onClick={() => handleToggleAlreadyRead(id)}
+            $isAlreadyRead={currentBookData?.isAlreadyRead}
+            aria-label={currentBookData?.isAlreadyRead ? "remove from your already read list" : "add to your already read list"}
             >
-              Set book on wishlist
-            </StyledBookmarkButton> */}
+              Book already read
+        </StyledAlreadyReadButton> 
         <h3>{currentBook.title}</h3>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>
