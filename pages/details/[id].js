@@ -55,6 +55,15 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             >
               Set book on wishlist
             </StyledBookmarkButton>
+            {/* <StyledBookmarkButton 
+            type="button"
+            onClick={() => handleToggleBookmark(id)}
+            $isBookmarked={currentBookData?.isBookmarked}
+            booksData={booksData}
+            aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
+            >
+              Set book on wishlist
+            </StyledBookmarkButton> */}
         <h3>{currentBook.title}</h3>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>

@@ -4,7 +4,7 @@ import useLocalStorageState from "use-local-storage-state";
 import { useState } from "react";
 
 const initialBooksData = books.map((book) => {
-  return { id: book.id, isBookmarked: false };
+  return { id: book.id, isBookmarked: false, isAlreadyRead: false };
   // return { id: book.id, isBookmarked: false, isAlreadyRead: false };
 });
 

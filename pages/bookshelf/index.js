@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
 import { useState } from "react";
 
-export default function MyBookShelf({
+export default function Bookshelf({
     books,
     booksData,
     handleToggleBookmark
@@ -32,10 +32,10 @@ export default function MyBookShelf({
     return(
         <>
         <header>
-        <h1>Wishlist</h1>
+        <h1>My Bookshelf</h1>
       </header>
       <main>
-        {/* <button
+        <button
             type="button"
             aria-label="shows list of books on your wishlist"
             onClick={() => {
@@ -44,7 +44,7 @@ export default function MyBookShelf({
             $isActive={filter === "wishlist-books" ? true : false}
           >
             My wishlist
-        </button> */}
+        </button>
         {filteredBooks?.length > 0 ? (
           <BookList
             books={filteredBooks}
