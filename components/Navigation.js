@@ -40,7 +40,7 @@ export default function Navigation() {
     <nav>
         <StyledList>
             <StyledListElement $isActive={router.pathname === "/"}><NavigationLink $isActive={router.pathname === "/"} href="/">Book Shop</NavigationLink></StyledListElement>
-            <StyledListElement $isActive={router.pathname === "/wishlist"}><NavigationLink $isActive={router.pathname === "/wishlist"} href="/wishlist">Wishlist</NavigationLink></StyledListElement>
+            <StyledListElement $isActive={router.pathname === "/bookshelf"}><NavigationLink $isActive={router.pathname === "/bookshelf"} href="/bookshelf">Book Shelf</NavigationLink></StyledListElement>
         </StyledList>
     </nav>
   );
