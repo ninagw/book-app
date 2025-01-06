@@ -19,6 +19,14 @@ const StyledAlreadyReadButton = styled.button`
   padding: 0.4rem;
 `;
 
+const StyledCurrentlyReadingButton = styled.button`
+  background-color: ${({ $isCurrentlyReading }) =>
+    $isCurrentlyReading ? "var(--pink-color)" : "var(--lightgrey-color)"};
+  border-radius: var(--border-radius);
+  border: none;
+  padding: 0.4rem;
+`;
+
 export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
 const router = useRouter();
 const { id } = router.query;
@@ -71,6 +79,14 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             >
               Book already read
         </StyledAlreadyReadButton> 
+        <StyledCurrentlyReadingButton 
+            type="button"
+            onClick={() => handleToggleCurrentlyReading(id)}
+            $isCurrentlyReading={currentBookData?.isCurrentlyReading}
+            aria-label={currentBookData?.isCurrentlyReading ? "remove from your currently reading list" : "add to your currently reading list"}
+            >
+              Book currently reading
+        </StyledCurrentlyReadingButton> 
         <h3>{currentBook.title}</h3>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>
