@@ -6,7 +6,8 @@ export default function Bookshelf({
     books,
     booksData,
     handleToggleBookmark,
-    handleToggleAlreadyRead
+    handleToggleAlreadyRead,
+    handleToggleCurrentlyReading
 }) {
     const [filter, setFilter] = useState("wishlist-books");
     function handleFilter(newFilter) {
@@ -23,11 +24,11 @@ export default function Bookshelf({
             (booksData) => booksData.id === book.id && booksData.isAlreadyRead
           );
         } 
-        // else if (filter === "currently-reading-books") {
-        //   return booksData.find(
-        //     (booksData) => booksData.id === book.id && booksData.isCurrentlyReading
-        //   );
-        // }
+        else if (filter === "currently-reading-books") {
+          return booksData.find(
+            (booksData) => booksData.id === book.id && booksData.isCurrentlyReading
+          );
+        }
       });
 
     return(
@@ -56,13 +57,23 @@ export default function Bookshelf({
           >
             Books already read
         </button>
+        <button
+            type="button"
+            aria-label="shows list of books you are currently reading"
+            onClick={() => {
+              handleFilter("currently-reading-books");
+            }}
+            $isActive={filter === "currently-reading-books" ? true : false}
+          >
+            Books currently reading
+        </button>
         {filteredBooks?.length > 0 ? (
           <BookList
             books={filteredBooks}
             booksData={booksData}
             handleToggleBookmark={handleToggleBookmark}
             handleToggleAlreadyRead={handleToggleAlreadyRead}
-            // handleToggleCurrentlyReading={handleToggleCurrentlyReading}
+            handleToggleCurrentlyReading={handleToggleCurrentlyReading}
             // setAnimationActiveBookmark={setAnimationActiveBookmark}
             // setAnimationActiveAlreadyRead={setAnimationActiveAlreadyRead}
           />
