@@ -41,46 +41,48 @@ export default function Bookshelf({
         <h1>My Bookshelf</h1>
       </header>
       <main>
-        <button
-            type="button"
-            aria-label="shows list of books on your wishlist"
-            onClick={() => {
-              handleFilter("wishlist-books");
-            }}
-            $isActive={filter === "wishlist-books" ? true : false}
-          >
-            My wishlist
-        </button>
-        <button
-            type="button"
-            aria-label="shows list of books on your TBR"
-            onClick={() => {
-              handleFilter("to-be-read-books");
-            }}
-            $isActive={filter === "to-be-read-books" ? true : false}
-          >
-            My TBR
-        </button>
-        <button
-            type="button"
-            aria-label="shows list of books you already read"
-            onClick={() => {
-              handleFilter("already-read-books");
-            }}
-            $isActive={filter === "already-read-books" ? true : false}
-          >
-            Books already read
-        </button>
-        <button
-            type="button"
-            aria-label="shows list of books you are currently reading"
-            onClick={() => {
-              handleFilter("currently-reading-books");
-            }}
-            $isActive={filter === "currently-reading-books" ? true : false}
-          >
-            Books currently reading
-        </button>
+          <div>
+            <button
+                type="button"
+                aria-label="shows list of books on your wishlist"
+                onClick={() => {
+                  handleFilter("wishlist-books");
+                }}
+                $isActive={filter === "wishlist-books" ? true : false}
+              >
+                My wishlist
+            </button>
+            <button
+                type="button"
+                aria-label="shows list of books on your TBR"
+                onClick={() => {
+                  handleFilter("to-be-read-books");
+                }}
+                $isActive={filter === "to-be-read-books" ? true : false}
+              >
+                My TBR
+            </button>
+            <button
+                type="button"
+                aria-label="shows list of books you already read"
+                onClick={() => {
+                  handleFilter("already-read-books");
+                }}
+                $isActive={filter === "already-read-books" ? true : false}
+              >
+                Books already read
+            </button>
+            <button
+                type="button"
+                aria-label="shows list of books you are currently reading"
+                onClick={() => {
+                  handleFilter("currently-reading-books");
+                }}
+                $isActive={filter === "currently-reading-books" ? true : false}
+              >
+                Books currently reading
+            </button>
+          </div>
         {filteredBooks?.length > 0 ? (
           <BookList
             books={filteredBooks}
