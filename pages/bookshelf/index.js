@@ -17,7 +17,6 @@ const StyledFilterButton = styled.button`
 
 const StyledButtonWrapper = styled.section`
   display: flex;
-  justify-content: space-around;
   gap: 5px;
   padding: 8px;
 `;
@@ -44,13 +43,13 @@ export default function Bookshelf({
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isTBR
           );
-        } else if (filter === "already-read-books") {
-          return booksData.find(
-            (booksData) => booksData.id === book.id && booksData.isAlreadyRead
-          );
         } else if (filter === "currently-reading-books") {
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isCurrentlyReading
+          );
+        } else if (filter === "already-read-books") {
+          return booksData.find(
+            (booksData) => booksData.id === book.id && booksData.isAlreadyRead
           );
         }
       });
@@ -84,16 +83,6 @@ export default function Bookshelf({
             </StyledFilterButton>
             <StyledFilterButton
                 type="button"
-                aria-label="shows list of books you already read"
-                onClick={() => {
-                  handleFilter("already-read-books");
-                }}
-                $isActive={filter === "already-read-books" ? true : false}
-              >
-                Books already read
-            </StyledFilterButton>
-            <StyledFilterButton
-                type="button"
                 aria-label="shows list of books you are currently reading"
                 onClick={() => {
                   handleFilter("currently-reading-books");
@@ -101,6 +90,16 @@ export default function Bookshelf({
                 $isActive={filter === "currently-reading-books" ? true : false}
               >
                 Books currently reading
+            </StyledFilterButton>
+            <StyledFilterButton
+                type="button"
+                aria-label="shows list of books you already read"
+                onClick={() => {
+                  handleFilter("already-read-books");
+                }}
+                $isActive={filter === "already-read-books" ? true : false}
+              >
+                Books already read
             </StyledFilterButton>
           </StyledButtonWrapper>
         {filteredBooks?.length > 0 ? (
