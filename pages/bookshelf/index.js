@@ -1,6 +1,26 @@
 import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
+import styled from "styled-components";
 import { useState } from "react";
+
+const StyledFilterButton = styled.button`
+  border-style: none;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.19);
+  font-size: 16px;
+  background-color: ${({ $isActive }) =>
+    $isActive ? "var(--text-color)" : "var(--background-color)"};
+  color: ${({ $isActive }) =>
+    $isActive ? "var(--background-color)" : "var(--text-color)"};
+  padding: 4px;
+`;
+
+const StyledButtonWrapper = styled.section`
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  padding: 8px;
+`;
 
 export default function Bookshelf({
     books,
@@ -41,8 +61,8 @@ export default function Bookshelf({
         <h1>My Bookshelf</h1>
       </header>
       <main>
-          <div>
-            <button
+          <StyledButtonWrapper>
+            <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your wishlist"
                 onClick={() => {
@@ -51,8 +71,8 @@ export default function Bookshelf({
                 $isActive={filter === "wishlist-books" ? true : false}
               >
                 My wishlist
-            </button>
-            <button
+            </StyledFilterButton>
+            <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your TBR"
                 onClick={() => {
@@ -61,8 +81,8 @@ export default function Bookshelf({
                 $isActive={filter === "to-be-read-books" ? true : false}
               >
                 My TBR
-            </button>
-            <button
+            </StyledFilterButton>
+            <StyledFilterButton
                 type="button"
                 aria-label="shows list of books you already read"
                 onClick={() => {
@@ -71,8 +91,8 @@ export default function Bookshelf({
                 $isActive={filter === "already-read-books" ? true : false}
               >
                 Books already read
-            </button>
-            <button
+            </StyledFilterButton>
+            <StyledFilterButton
                 type="button"
                 aria-label="shows list of books you are currently reading"
                 onClick={() => {
@@ -81,8 +101,8 @@ export default function Bookshelf({
                 $isActive={filter === "currently-reading-books" ? true : false}
               >
                 Books currently reading
-            </button>
-          </div>
+            </StyledFilterButton>
+          </StyledButtonWrapper>
         {filteredBooks?.length > 0 ? (
           <BookList
             books={filteredBooks}
