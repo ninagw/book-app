@@ -1,22 +1,19 @@
 import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
-import { useState } from "react";
 
 export default function Wishlist({
     books,
     booksData,
     handleToggleBookmark,
 }) {
-    const [filter, setFilter] = useState("wishlist-books");
+    // const [filter, setFilter] = useState("wishlist-books");
     
     // function handleFilter(newFilter) {
     //   setFilter(newFilter);
     // }
 
     const filteredBooks = books.filter((book) => 
-        filter !== "wishlist-books"
-        ? true
-        : booksData.find((booksData) => booksData.id === book.id && booksData.isBookmarked)
+        booksData.find((booksData) => booksData.id === book.id && booksData.isBookmarked)
     );
 
     return(
