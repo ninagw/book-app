@@ -29,20 +29,20 @@ export default function Bookshelf({
     handleToggleAlreadyRead,
     handleToggleCurrentlyReading
 }) {
-    const [filter, setFilter] = useState("wishlist-books");
+    const [filter, setFilter] = useState("all-bookshelf-books");
     function handleFilter(newFilter) {
       setFilter(newFilter);
     }
 
     const filteredBooks = books.filter((book) => {
-        if (filter === "wishlist-books") {
-          return booksData.find(
-            (booksData) => booksData.id === book.id && booksData.isBookmarked
-          );
-        } else if (filter === "to-be-read-books") {
+        if (filter === "to-be-read-books") {
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isTBR
           );
+        // } else if (filter === "wishlist-books") {
+        //   return booksData.find(
+        //     (booksData) => booksData.id === book.id && booksData.isBookmarked
+        //   );
         } else if (filter === "currently-reading-books") {
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isCurrentlyReading
@@ -75,7 +75,7 @@ export default function Bookshelf({
               >
                 All books
             </StyledFilterButton>
-            <StyledFilterButton
+            {/* <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your wishlist"
                 onClick={() => {
@@ -84,7 +84,7 @@ export default function Bookshelf({
                 $isActive={filter === "wishlist-books" ? true : false}
               >
                 My wishlist
-            </StyledFilterButton>
+            </StyledFilterButton> */}
             <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your TBR"
@@ -120,7 +120,7 @@ export default function Bookshelf({
           <BookList
             books={filteredBooks}
             booksData={booksData}
-            handleToggleBookmark={handleToggleBookmark}
+            // handleToggleBookmark={handleToggleBookmark}
             handleToggleTBR={handleToggleTBR}
             handleToggleAlreadyRead={handleToggleAlreadyRead}
             handleToggleCurrentlyReading={handleToggleCurrentlyReading}
@@ -131,7 +131,7 @@ export default function Bookshelf({
           <p>You have not added any books yet.</p>
         )}
       </main>
-      <Navigation></Navigation>
+      <Navigation />
       </>
     )
 }
