@@ -51,6 +51,10 @@ export default function Bookshelf({
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isAlreadyRead
           );
+        } else if (filter === "all-bookshelf-books") {
+          return booksData.find(
+            (booksData) => booksData.id === book.id && (booksData.isTBR || booksData.isCurrentlyReading || booksData.isAlreadyRead)
+          );
         }
       });
 
@@ -61,6 +65,16 @@ export default function Bookshelf({
       </header>
       <main>
           <StyledButtonWrapper>
+          <StyledFilterButton
+                type="button"
+                aria-label="shows list of books all books on your shelf"
+                onClick={() => {
+                  handleFilter("all-bookshelf-books");
+                }}
+                $isActive={filter === "all-bookshelf-books" ? true : false}
+              >
+                All books
+            </StyledFilterButton>
             <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your wishlist"

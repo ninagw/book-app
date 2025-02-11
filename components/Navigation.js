@@ -15,7 +15,7 @@ const StyledList = styled.ul`
   bottom: 0;
   left: 0;
   right: 0;
-  max-width: 600px;
+  // max-width: 600px;
 `;
 
 const StyledListElement = styled.li`
