@@ -3,6 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 
+const StyledLink = styled(Link)`
+  color: var(--text-color);
+  text-decoration: none;
+`;
+
 const StyledBookmarkButton = styled.button`
   background-color: ${({ $isBookmarked }) =>
     $isBookmarked ? "var(--pink-color)" : "var(--lightgrey-color)"};
@@ -60,7 +65,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
   return (
     <>
       <header>
-        <Link href={`/`}>Back</Link>
+        <StyledLink href={`/`}>← Back</StyledLink>
         <h1>Book details</h1>
       </header>
       <main>
