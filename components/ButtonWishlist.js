@@ -1,15 +1,23 @@
 import styled from "styled-components";
 import Image from "next/image";
+import heartRed from "/public/assets/icons/heart_red.png";
+import { useRouter } from "next/router";
 
 const StyledBookmarkButton = styled.button`
   background-color: ${({ $isBookmarked }) =>
     $isBookmarked ? "var(--pink-color)" : "var(--lightgrey-color)"};
-  border-radius: var(--border-radius);
+  border-radius: 50%;
   border: none;
   padding: 0.4rem;
 `;
 
-export default function ButtonWishlist({ isBookmarked, handleToggleBookmark }) {
+export default function ButtonWishlist({ books, booksData, isBookmarked, handleToggleBookmark }) {
+    const router = useRouter();
+    const { id } = router.query;
+    const pathName = router.pathname;
+    // const currentBook = books.find((book) => book.id === id);
+    const currentBookData = booksData?.find((bookData) => bookData.id === id);
+
   return (
     <StyledBookmarkButton 
     type="button"
@@ -18,7 +26,7 @@ export default function ButtonWishlist({ isBookmarked, handleToggleBookmark }) {
     booksData={booksData}
     aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
     >
-    <Image src={"/public/assets/icons/heart_empty.png"} alt="heart icons" height={20} width={20}/>
+    <Image src={heartRed} alt="heart icon" height={20} width={20}/>
     {/* <a href="https://www.flaticon.com/free-icons/heart" >Heart icons created by Freepik - Flaticon</a> */}
     </StyledBookmarkButton>
   );

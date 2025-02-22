@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
 import styled from "styled-components";
 import { useState } from "react";
+import ButtonWishlist from "@/components/ButtonWishlist";
 
 const StyledFilterButton = styled.button`
   border-style: none;
@@ -75,6 +76,7 @@ export default function Bookshelf({
               >
                 All books
             </StyledFilterButton>
+            <ButtonWishlist/>
             {/* <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your wishlist"
