@@ -8,7 +8,7 @@ const StyledList = styled.ul`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 13px;
 `;
 
 export default function BookList({ books }) {
@@ -21,8 +21,8 @@ export default function BookList({ books }) {
         <li key={book.id}>
           <Image
             alt={book.title}
-            height={100}
-            width={70}
+            height={150}
+            width={100}
             src={book.cover}
             id={book.id}
             onClick={() => {
