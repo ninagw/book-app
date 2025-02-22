@@ -18,7 +18,8 @@ export default function ButtonWishlist({ isBookmarked, handleToggleBookmark }) {
     booksData={booksData}
     aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
     >
-    <a href="https://www.flaticon.com/free-icons/heart" title="heart icons">Heart icons created by Freepik - Flaticon</a>
+    <Image src={"/public/assets/icons/heart_empty.png"} alt="heart icons" height={20} width={20}/>
+    {/* <a href="https://www.flaticon.com/free-icons/heart" >Heart icons created by Freepik - Flaticon</a> */}
     </StyledBookmarkButton>
   );
 }
