@@ -76,7 +76,6 @@ export default function Bookshelf({
               >
                 All books
             </StyledFilterButton>
-            <ButtonWishlist/>
             {/* <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your wishlist"

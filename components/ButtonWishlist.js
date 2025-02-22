@@ -8,6 +8,8 @@ const StyledBookmarkButton = styled.button`
     $isBookmarked ? "var(--pink-color)" : "var(--lightgrey-color)"};
   border-radius: 50%;
   border: none;
+  display: flex;
+  justify-content: center;
   padding: 0.4rem;
 `;
 
@@ -27,7 +29,6 @@ export default function ButtonWishlist({ books, booksData, isBookmarked, handleT
     aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
     >
     <Image src={heartRed} alt="heart icon" height={20} width={20}/>
-    {/* <a href="https://www.flaticon.com/free-icons/heart" >Heart icons created by Freepik - Flaticon</a> */}
     </StyledBookmarkButton>
   );
 }

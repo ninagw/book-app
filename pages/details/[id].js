@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import ButtonWishlist from "@/components/ButtonWishlist";
 
 const StyledLink = styled(Link)`
   color: var(--text-color);
@@ -75,7 +76,8 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             width={70}
             src={currentBook.cover}
             id={currentBook.id}/>
-        <StyledBookmarkButton 
+        <ButtonWishlist handleToggleBookmark={handleToggleBookmark}/>
+        {/* <StyledBookmarkButton 
             type="button"
             onClick={() => handleToggleBookmark(id)}
             $isBookmarked={currentBookData?.isBookmarked}
@@ -83,7 +85,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
             >
               Set book on wishlist
-        </StyledBookmarkButton>
+        </StyledBookmarkButton> */}
         <StyledTBRButton 
             type="button"
             onClick={() => handleToggleTBR(id)}
