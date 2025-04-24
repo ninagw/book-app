@@ -4,6 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import ButtonWishlist from "@/components/ButtonWishlist";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
+import AlreadyReadIcon from "@/components/Icons/AlreadyReadIcon";
 
 const StyledLink = styled(Link)`
   color: var(--text-color);
@@ -21,17 +22,19 @@ const StyledBookmarkButton = styled.button`
 const StyledTBRButton = styled.button `
   background-color: ${({ $isTBR }) =>
     $isTBR ? "var(--pink-color)" : "var(--lightgrey-color)"};
-  border-radius: var(--border-radius);
-  border: none;
+  cursor: pointer;
   padding: 0.4rem;
 `;
 
 const StyledAlreadyReadButton = styled.button`
   background-color: ${({ $isAlreadyRead }) =>
-    $isAlreadyRead ? "var(--pink-color)" : "var(--lightgrey-color)"};
+    $isAlreadyRead ? "var(--background-color)" : "var(--pink-color)"};
   border-radius: var(--border-radius);
+  decoration: none;
   border: none;
-  padding: 0.4rem;
+  // border: 1px solid var(--text-color);
+  padding: 5px 3px 3px 4px;
+  cursor: pointer;
 `;
 
 const StyledCurrentlyReadingButton = styled.button`
@@ -99,13 +102,18 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             >
               Set on your TBR list
         </StyledTBRButton> 
+        {/* <ButtonAlreadyRead
+            handleToggleBookmark={handleToggleBookmark}
+            id={currentBook.id}
+            isBookmarked={currentBookData?.isBookmarked}
+            booksData={booksData}/> */}
         <StyledAlreadyReadButton 
             type="button"
             onClick={() => handleToggleAlreadyRead(id)}
             $isAlreadyRead={currentBookData?.isAlreadyRead}
             aria-label={currentBookData?.isAlreadyRead ? "remove from your already read list" : "add to your already read list"}
             >
-              Book already read
+              <AlreadyReadIcon $isActive={currentBookData?.isAlreadyRead ? "var(--background-color)" : "var(--pink-color)"}/>
         </StyledAlreadyReadButton> 
         <StyledCurrentlyReadingButton 
             type="button"

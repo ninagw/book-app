@@ -10,7 +10,7 @@ const StyledBookmarkButton = styled.button`
   display: flex;
   justify-content: center;
   //padding: 0.4rem;
-  padding: 6px 5px 5px 5px
+  padding: 6px 5px 5px 5px;
 `;
 
 export default function ButtonWishlist({ id, booksData, isBookmarked, handleToggleBookmark }) {

@@ -5,7 +5,7 @@ export default function WishlistIcon({ $isActive }) {
              height="24px"
              width="24px"
              viewBox="0 -960 960 960"
-             fill="var(--pink-color)"
+             fill="var(--text-color)"
              // stroke="var(--pink-color)"
         >
             <path
