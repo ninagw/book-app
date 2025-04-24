@@ -14,23 +14,16 @@ const StyledBookmarkButton = styled.button`
   padding: 0.4rem;
 `;
 
-export default function ButtonWishlist({ id, books, booksData, isBookmarked, handleToggleBookmark }) {
-    //const router = useRouter();
-    //const { id } = router.query;
-    //const pathName = router.pathname;
-    //const currentBook = books.find((book) => book.id === id);
+export default function ButtonWishlist({ id, booksData, isBookmarked, handleToggleBookmark }) {
     const currentBookData = booksData?.find((bookData) => bookData.id === id);
 
   return (
     <StyledBookmarkButton 
     type="button"
     onClick={() => handleToggleBookmark(id)}
-    //$isBookmarked={currentBookData?.isBookmarked}
     $isBookmarked={isBookmarked}
     booksData={booksData}
-    //aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
     aria-label={isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
-
     >
         <WishlistIcon $isActive={isBookmarked} />
     </StyledBookmarkButton>
