@@ -76,7 +76,11 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             width={70}
             src={currentBook.cover}
             id={currentBook.id}/>
-        <ButtonWishlist handleToggleBookmark={handleToggleBookmark}/>
+        <ButtonWishlist
+            handleToggleBookmark={handleToggleBookmark}
+            id={currentBook.id}
+            isBookmarked={currentBookData?.isBookmarked}
+            booksData={booksData}/>
         {/* <StyledBookmarkButton 
             type="button"
             onClick={() => handleToggleBookmark(id)}
