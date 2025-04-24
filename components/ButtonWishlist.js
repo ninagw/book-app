@@ -1,17 +1,16 @@
 import styled from "styled-components";
-import Image from "next/image";
-import heartRed from "/public/assets/icons/heart_red.png";
-import { useRouter } from "next/router";
-import WishlistIcon from "@/components/WishlistIcon";
+import WishlistIcon from "@/components/Icons/WishlistIcon";
 
 const StyledBookmarkButton = styled.button`
     background-color: ${({ $isBookmarked }) =>
-            $isBookmarked ? "var(--pink-color)" : "var(--lightgrey-color)"};
+            $isBookmarked ? "var(--background-color)" : "var(--lightgrey-color)"};
   border-radius: 50%;
-  border: none;
+  border: 1px solid var(--pink-color);
+  cursor: pointer;
   display: flex;
   justify-content: center;
-  padding: 0.4rem;
+  //padding: 0.4rem;
+  padding: 6px 5px 5px 5px
 `;
 
 export default function ButtonWishlist({ id, booksData, isBookmarked, handleToggleBookmark }) {

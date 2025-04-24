@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import ButtonWishlist from "@/components/ButtonWishlist";
+import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
 
 const StyledLink = styled(Link)`
   color: var(--text-color);
@@ -66,7 +67,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
   return (
     <>
       <header>
-        <StyledLink href={`/`}>← Back</StyledLink>
+        <StyledLink href={`/`}><ArrowBackIcon/></StyledLink>
         <h1>Book details</h1>
       </header>
       <main>

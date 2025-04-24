@@ -3,6 +3,7 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/details/[id]": "pages/details/[id].js",
-  "/wishlist": "pages/wishlist.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/bookshelf": "pages/bookshelf.js",
+  "/wishlist": "pages/wishlist.js"
 }
