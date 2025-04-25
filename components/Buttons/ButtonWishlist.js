@@ -3,14 +3,13 @@ import WishlistIcon from "@/components/Icons/WishlistIcon";
 
 const StyledBookmarkButton = styled.button`
     background-color: ${({ $isBookmarked }) =>
-            $isBookmarked ? "var(--background-color)" : "var(--lightgrey-color)"};
-  border-radius: 50%;
-  border: 1px solid var(--pink-color);
+            $isBookmarked ? "var(--pink-color)" : "var(--background-color)"};
+  border-radius: var(--border-radius);
+  decoration: none;
+  border: none;
+  // border: 1px solid var(--text-color);
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  //padding: 0.4rem;
-  padding: 6px 5px 5px 5px;
+  padding: 6px 5px 3px 5px;
 `;
 
 export default function ButtonWishlist({ id, booksData, isBookmarked, handleToggleBookmark }) {
