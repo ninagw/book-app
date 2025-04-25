@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
 import styled from "styled-components";
 import { useState } from "react";
-import ButtonWishlist from "@/components/ButtonWishlist";
+import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
 
 const StyledFilterButton = styled.button`
   border-style: none;

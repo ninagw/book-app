@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import ButtonWishlist from "@/components/ButtonWishlist";
+import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
 import AlreadyReadIcon from "@/components/Icons/AlreadyReadIcon";
 
@@ -28,7 +28,7 @@ const StyledTBRButton = styled.button `
 
 const StyledAlreadyReadButton = styled.button`
   background-color: ${({ $isAlreadyRead }) =>
-    $isAlreadyRead ? "var(--background-color)" : "var(--pink-color)"};
+    $isAlreadyRead ? "var(--pink-color)" : "var(--background-color)"};
   border-radius: var(--border-radius);
   decoration: none;
   border: none;
@@ -90,7 +90,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             onClick={() => handleToggleBookmark(id)}
             $isBookmarked={currentBookData?.isBookmarked}
             booksData={booksData}
-            aria-label={currentBookData?.isBookmarked ? "remove from your wishlist" : "add to your wishlist"}
+            aria-label={currentBookData?.isBookmarked ? "remove book from your wishlist" : "add book to your wishlist"}
             >
               Set book on wishlist
         </StyledBookmarkButton> */}
@@ -98,7 +98,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             type="button"
             onClick={() => handleToggleTBR(id)}
             $isTBR={currentBookData?.isTBR}
-            aria-label={currentBookData?.isTBR ? "remove from your to be read list" : "add to your to be read list"}
+            aria-label={currentBookData?.isTBR ? "remove book from your to be read list" : "add book to your to be read list"}
             >
               Set on your TBR list
         </StyledTBRButton> 
@@ -111,15 +111,15 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             type="button"
             onClick={() => handleToggleAlreadyRead(id)}
             $isAlreadyRead={currentBookData?.isAlreadyRead}
-            aria-label={currentBookData?.isAlreadyRead ? "remove from your already read list" : "add to your already read list"}
+            aria-label={currentBookData?.isAlreadyRead ? "remove book from your already read list" : "add book to your already read list"}
             >
-              <AlreadyReadIcon $isActive={currentBookData?.isAlreadyRead ? "var(--background-color)" : "var(--pink-color)"}/>
+              <AlreadyReadIcon $isActive={currentBookData?.isAlreadyRead}/>
         </StyledAlreadyReadButton> 
         <StyledCurrentlyReadingButton 
             type="button"
             onClick={() => handleToggleCurrentlyReading(id)}
             $isCurrentlyReading={currentBookData?.isCurrentlyReading}
-            aria-label={currentBookData?.isCurrentlyReading ? "remove from your currently reading list" : "add to your currently reading list"}
+            aria-label={currentBookData?.isCurrentlyReading ? "remove book from your currently reading list" : "add book to your currently reading list"}
             >
               Book currently reading
         </StyledCurrentlyReadingButton> 
