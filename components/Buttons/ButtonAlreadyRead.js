@@ -8,8 +8,15 @@ const StyledAlreadyReadButton = styled.button`
   decoration: none;
   border: none;
   // border: 1px solid var(--text-color);
-  padding: 5px 3px 3px 4px;
+  // padding: 5px 3px 3px 4px;
   cursor: pointer;
+    height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transition: background-color 0.4s ease;
 `;
 
 export default function ButtonAlreadyRead({ id, booksData, isAlreadyRead, handleToggleAlreadyRead }) {

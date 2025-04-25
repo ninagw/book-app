@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
+import ButtonCurrentlyReading from "@/components/Buttons/ButtonCurrentlyReading";
 import ButtonAlreadyRead from "@/components/Buttons/ButtonAlreadyRead";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
 
@@ -23,14 +24,6 @@ const StyledTBRButton = styled.button `
   background-color: ${({ $isTBR }) =>
     $isTBR ? "var(--pink-color)" : "var(--lightgrey-color)"};
   cursor: pointer;
-  padding: 0.4rem;
-`;
-
-const StyledCurrentlyReadingButton = styled.button`
-  background-color: ${({ $isCurrentlyReading }) =>
-    $isCurrentlyReading ? "var(--pink-color)" : "var(--lightgrey-color)"};
-  border-radius: var(--border-radius);
-  border: none;
   padding: 0.4rem;
 `;
 
@@ -87,14 +80,12 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             id={currentBook.id}
             $isAlreadyRead={currentBookData?.isAlreadyRead}
             booksData={booksData}/>
-        <StyledCurrentlyReadingButton 
-            type="button"
-            onClick={() => handleToggleCurrentlyReading(id)}
+        <ButtonCurrentlyReading 
+            handleToggleCurrentlyReading={handleToggleCurrentlyReading}
+            id={currentBook.id}
             $isCurrentlyReading={currentBookData?.isCurrentlyReading}
-            aria-label={currentBookData?.isCurrentlyReading ? "remove book from your currently reading list" : "add book to your currently reading list"}
-            >
-              Book currently reading
-        </StyledCurrentlyReadingButton> 
+            booksData={booksData}
+        />
         <h3>{currentBook.title}</h3>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>
