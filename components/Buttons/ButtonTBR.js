@@ -19,7 +19,7 @@ const StyledTBRButton = styled.button`
   transition: background-color 0.4s ease;
 `;
 
-export default function ButtonTBR({ id, booksData, isTBR, handleToggleBookmark }) {
+export default function ButtonTBR({ id, booksData, isTBR, handleToggleTBR }) {
     const currentBookData = booksData?.find((bookData) => bookData.id === id);
 
   return (

@@ -13,13 +13,11 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const StyledBookmarkButton = styled.button`
-  background-color: ${({ $isBookmarked }) =>
-    $isBookmarked ? "var(--pink-color)" : "var(--lightgrey-color)"};
-  border-radius: var(--border-radius);
-  border: none;
-  padding: 0.4rem;
-`;
+const StyledButtonContainer = styled.section`
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  `;
 
 export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleTBR, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
 const router = useRouter();
@@ -56,27 +54,28 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             width={70}
             src={currentBook.cover}
             id={currentBook.id}/>
-        <ButtonWishlist
-            handleToggleBookmark={handleToggleBookmark}
-            id={currentBook.id}
-            isBookmarked={currentBookData?.isBookmarked}
-            booksData={booksData}/>
-        <ButtonTBR
-            handleToggleTBR={handleToggleTBR}
-            id={currentBook.id}
-            $isTBR={currentBookData?.isTBR}
-            booksData={booksData}/>
-        <ButtonAlreadyRead
-            handleToggleAlreadyRead={handleToggleAlreadyRead}
-            id={currentBook.id}
-            $isAlreadyRead={currentBookData?.isAlreadyRead}
-            booksData={booksData}/>
-        <ButtonCurrentlyReading 
-            handleToggleCurrentlyReading={handleToggleCurrentlyReading}
-            id={currentBook.id}
-            $isCurrentlyReading={currentBookData?.isCurrentlyReading}
-            booksData={booksData}
-        />
+        <StyledButtonContainer>
+          <ButtonWishlist
+              handleToggleBookmark={handleToggleBookmark}
+              id={currentBook.id}
+              isBookmarked={currentBookData?.isBookmarked}
+              booksData={booksData}/>
+          <ButtonTBR
+              handleToggleTBR={handleToggleTBR}
+              id={currentBook.id}
+              $isTBR={currentBookData?.isTBR}
+              booksData={booksData}/>
+          <ButtonAlreadyRead
+              handleToggleAlreadyRead={handleToggleAlreadyRead}
+              id={currentBook.id}
+              $isAlreadyRead={currentBookData?.isAlreadyRead}
+              booksData={booksData}/>
+          <ButtonCurrentlyReading 
+              handleToggleCurrentlyReading={handleToggleCurrentlyReading}
+              id={currentBook.id}
+              $isCurrentlyReading={currentBookData?.isCurrentlyReading}
+              booksData={booksData}/>
+        </StyledButtonContainer>
         <h3>{currentBook.title}</h3>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>
