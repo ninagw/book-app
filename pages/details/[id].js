@@ -6,6 +6,7 @@ import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
 import ButtonCurrentlyReading from "@/components/Buttons/ButtonCurrentlyReading";
 import ButtonAlreadyRead from "@/components/Buttons/ButtonAlreadyRead";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
+import ButtonTBR from "@/components/Buttons/ButtonTBR";
 
 const StyledLink = styled(Link)`
   color: var(--text-color);
@@ -17,13 +18,6 @@ const StyledBookmarkButton = styled.button`
     $isBookmarked ? "var(--pink-color)" : "var(--lightgrey-color)"};
   border-radius: var(--border-radius);
   border: none;
-  padding: 0.4rem;
-`;
-
-const StyledTBRButton = styled.button `
-  background-color: ${({ $isTBR }) =>
-    $isTBR ? "var(--pink-color)" : "var(--lightgrey-color)"};
-  cursor: pointer;
   padding: 0.4rem;
 `;
 
@@ -67,14 +61,11 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             id={currentBook.id}
             isBookmarked={currentBookData?.isBookmarked}
             booksData={booksData}/>
-        <StyledTBRButton 
-            type="button"
-            onClick={() => handleToggleTBR(id)}
+        <ButtonTBR
+            handleToggleTBR={handleToggleTBR}
+            id={currentBook.id}
             $isTBR={currentBookData?.isTBR}
-            aria-label={currentBookData?.isTBR ? "remove book from your to be read list" : "add book to your to be read list"}
-            >
-              Set book on your TBR list
-        </StyledTBRButton> 
+            booksData={booksData}/>
         <ButtonAlreadyRead
             handleToggleAlreadyRead={handleToggleAlreadyRead}
             id={currentBook.id}
