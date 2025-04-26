@@ -11,6 +11,45 @@ import ButtonTBR from "@/components/Buttons/ButtonTBR";
 const StyledLink = styled(Link)`
   color: var(--text-color);
   text-decoration: none;
+  display: flex;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 2;
+  `;
+
+const StyledImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 35vh;
+  overflow: hidden;
+  border-radius: 0 0 23% 23%;
+  justify-content: center;
+  color: var(--text-color);
+  margin: 0;
+  background: rgba(0, 0, 0, 0.8)
+`;
+
+const StyledImageBackground = styled(Image)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;
+  `;
+
+const StyledImage = styled(Image)`
+    // position: absolute;
+    width: 40%;
+    height: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    // top: 50%;
+    // left: 50%;
+    z-index: 1;
 `;
 
 const StyledButtonContainer = styled.section`
@@ -44,16 +83,27 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
   return (
     <>
       <header>
+      
+      <StyledImageContainer>
         <StyledLink href={`/`}><ArrowBackIcon/></StyledLink>
-        <h1>Book details</h1>
-      </header>
-      <main>
-        <Image
+        {/* <h1>Book details</h1> */}
+        <StyledImageBackground
             alt={currentBook.title}
             height={100}
             width={70}
             src={currentBook.cover}
             id={currentBook.id}/>
+        <StyledImage
+            alt={currentBook.title}
+            height={100}
+            width={70}
+            src={currentBook.cover}
+            id={currentBook.id}/>
+        <h2>{currentBook.title}</h2>
+
+      </StyledImageContainer>
+      </header>
+      <main>
         <StyledButtonContainer>
           <ButtonWishlist
               handleToggleBookmark={handleToggleBookmark}
@@ -65,18 +115,18 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
               id={currentBook.id}
               $isTBR={currentBookData?.isTBR}
               booksData={booksData}/>
-          <ButtonAlreadyRead
-              handleToggleAlreadyRead={handleToggleAlreadyRead}
-              id={currentBook.id}
-              $isAlreadyRead={currentBookData?.isAlreadyRead}
-              booksData={booksData}/>
           <ButtonCurrentlyReading 
               handleToggleCurrentlyReading={handleToggleCurrentlyReading}
               id={currentBook.id}
               $isCurrentlyReading={currentBookData?.isCurrentlyReading}
               booksData={booksData}/>
+          <ButtonAlreadyRead
+              handleToggleAlreadyRead={handleToggleAlreadyRead}
+              id={currentBook.id}
+              $isAlreadyRead={currentBookData?.isAlreadyRead}
+              booksData={booksData}/>
         </StyledButtonContainer>
-        <h3>{currentBook.title}</h3>
+        <h2>{currentBook.title}</h2>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>
         <p>{currentBook.pages}</p>

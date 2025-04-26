@@ -22,6 +22,16 @@ export default createGlobalStyle`
   // --secondary-color: #f45d48;
   --border-radius: 4px;
 
+  --font-size-h1: 32px;
+  --font-weight-h1: 700;
+  --line-height-h1: 45px;
+  --font-size-h2: 28px;
+  --font-weight-h2: 700;
+  --line-height-h2: 40px;
+  --font-size-copy: 18px;
+  --font-weight-copy: 300;
+  --line-height-copy: 24px;
+
   *,
   *::before,
   *::after {
@@ -35,11 +45,11 @@ export default createGlobalStyle`
     // font-variation-settings: "wght" 300; /* Beispiel für Variationsachsen */ 
     color: var(--text-color);
     background-color: var(--background-color);
-    padding: 0 20px;
+    
+    
   }
 
   header {
-    padding: 20px 0 20px 0;
     width: 100%;
     // position: sticky;
     // top: 0;
@@ -51,6 +61,7 @@ export default createGlobalStyle`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
     gap: 5px;
   }
 
@@ -62,5 +73,14 @@ export default createGlobalStyle`
 
   h2, h3 {
     font-family: ${robotoMedium.style.fontFamily}, 'Roboto', sans-serif;
-  }
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-h2);
+    line-height: var(--line-height-h2);
+    }
+
+  p {
+    font-weight: var(--font-weight-copy);
+    line-height: var(--line-height-copy);
+    font-size: var(--font-size-copy);
+    }
 `;
