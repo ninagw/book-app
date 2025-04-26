@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import BookshopIcon from "@/components/Icons/BookshopIcon";
+import WishlistIcon from "@/components/Icons/WishlistIcon";
+import BookshelfIcon from "@/components/Icons/BookshelfIcon";
 
 const StyledList = styled.ul`
   list-style: none;
@@ -9,7 +12,7 @@ const StyledList = styled.ul`
   padding-left: 0;
   border-top: 1.5px solid var(--text-color);
   margin-top: 20px;
-  font-size: 1.2rem;
+  //font-size: 1.2rem;
   margin: 0 auto;
   position: fixed;
   bottom: 0;
@@ -22,6 +25,8 @@ const StyledListElement = styled.li`
     $isActive ? "var(--text-color)" : "var(--background-color)"};
   width: 50%;
   padding: 7px 0px;
+  font-size: 0.9rem;
+  font-weight: 200;
 `;
 
 const NavigationLink = styled(Link)`
@@ -32,15 +37,34 @@ const NavigationLink = styled(Link)`
     $isActive ? "var(--background-color)" : "var(--text-color)"};
 `;
 
-export default function Navigation() {
+const StyledNavContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export default function Navigation({isBookmarked}) {
   const router = useRouter();
 
   return (
     <nav>
         <StyledList>
-            <StyledListElement $isActive={router.pathname === "/"}><NavigationLink $isActive={router.pathname === "/"} href="/">Book Shop</NavigationLink></StyledListElement>
-            <StyledListElement $isActive={router.pathname === "/wishlist"}><NavigationLink $isActive={router.pathname === "/wishlist"} href="/wishlist">Wishlist</NavigationLink></StyledListElement>
-            <StyledListElement $isActive={router.pathname === "/bookshelf"}><NavigationLink $isActive={router.pathname === "/bookshelf"} href="/bookshelf">My Bookshelf</NavigationLink></StyledListElement>
+            <StyledListElement $isActive={router.pathname === "/"}>
+                <NavigationLink $isActive={router.pathname === "/"} href="/">
+                    <StyledNavContainer><BookshopIcon $isActive={router.pathname === "/"}/>Book Shop</StyledNavContainer>
+                </NavigationLink>
+            </StyledListElement>
+            <StyledListElement $isActive={router.pathname === "/wishlist"}>
+                <NavigationLink $isActive={router.pathname === "/wishlist"} href="/wishlist">
+                    <StyledNavContainer><WishlistIcon $isActive={router.pathname === "/wishlist"}/>Wishlist</StyledNavContainer>
+                </NavigationLink>
+            </StyledListElement>
+            <StyledListElement $isActive={router.pathname === "/bookshelf"}>
+                <NavigationLink $isActive={router.pathname === "/bookshelf"} href="/bookshelf">
+                    <StyledNavContainer><BookshelfIcon $isActive={router.pathname === "/bookshelf"}/>Bookshelf</StyledNavContainer>
+                </NavigationLink>
+            </StyledListElement>
         </StyledList>
     </nav>
   );
