@@ -19,6 +19,9 @@ const StyledLink = styled(Link)`
   `;
 
 const StyledImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 35vh;
@@ -28,6 +31,7 @@ const StyledImageContainer = styled.div`
   color: var(--text-color);
   margin: 0;
   background: rgba(0, 0, 0, 0.8)
+  
 `;
 
 const StyledImageBackground = styled(Image)`
@@ -41,12 +45,9 @@ const StyledImageBackground = styled(Image)`
   `;
 
 const StyledImage = styled(Image)`
-    // position: absolute;
-    width: 40%;
-    height: 80%;
-    display: flex;
-    justify-content: end;
-    align-items: end;
+    position: absolute;
+    width: 120px;
+    height: auto;
     // top: 50%;
     // left: 50%;
     z-index: 1;
@@ -99,7 +100,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             width={70}
             src={currentBook.cover}
             id={currentBook.id}/>
-        <h2>{currentBook.title}</h2>
+        {/* <h2>{currentBook.title}</h2> */}
 
       </StyledImageContainer>
       </header>
