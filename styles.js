@@ -15,11 +15,12 @@ export default createGlobalStyle`
 :root{
   --background-color: #0D4028; // Dark Green
   --text-color: #D1AF94; // BEIGE
-  --lightgrey-color: #F1F0F0; // LIGHTGREY
+  --lightgrey-color: #ededed; // LIGHTGREY
   --pink-color: #DDA2B7; // POWDER PINK
   --button-text-color: #ffffff; // WHITE
   // --accent-color: #078080; 
   // --secondary-color: #f45d48;
+  
   --border-radius: 4px;
 
   --font-size-h1: 32px;

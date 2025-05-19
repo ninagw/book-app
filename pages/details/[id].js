@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
@@ -68,18 +69,46 @@ const StyledHeadlineContainer = styled.section`
   align-items: center;
   line-height: 0;
   padding-top: 20px;
-  margin: 0;`
+  margin: 0;
+  `;
 
 const StyledStatsContainer = styled.section`
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;`
+  justify-content: space-evenly;
+`;
 
 const StyledDescriptionContainer = styled.p`
   line-height: var(--line-height-copy);
-  margin: 0 20px;`
+  text-align: justify;
+  margin: 0 20px;
+  //display: flex;
+  //flex-direction: column;
+`;
+
+const StyledReadMoreButton = styled.button`
+  background-color: transparent;
+  border: none;
+  //border-radius: var(--border-radius);
+  //border: 1px solid var(--text-color);
+  decoration: none;
+  color: var(--pink-color);
+  font-size: var(--font-size-copy);
+  font-weight: var(--font-weight-copy);
+  text-decoration: underline;
+  //height: 35px;
+  //width: fit-content;
+  display: flex;
+  //align-items: center;
+  margin-top: 5px;
+  padding: 0;
+
+  //background-color: isReadMore ? "var(--pink-color)" : "var(--background-color)"};
+  // border: 1px solid var(--text-color);
+  // padding: 6px 5px 3px 5px;
+  //transition: background-color 0.4s ease;`;
 
 export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleTBR, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
 const router = useRouter();
@@ -102,6 +131,12 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
   if (!currentBook) {
     return <p>No books found.</p>;
   }
+
+  const [isReadMore, setIsReadMore] = useState(true);
+  function toggleReadMore() {
+    setIsReadMore(!isReadMore);
+  }
+  const readMoreLength = 350;
 
   return (
     <>
@@ -154,7 +189,18 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
           <p>{currentBook.pages} pages</p>
           <p>{currentBook.genre}</p>
         </StyledStatsContainer>
-        <StyledDescriptionContainer>{currentBook.description}</StyledDescriptionContainer>
+        <StyledDescriptionContainer>
+          {isReadMore && currentBook.description.length > readMoreLength
+            ? currentBook.description.slice(0, readMoreLength) + "..."
+            : currentBook.description}
+          {currentBook.description.length > readMoreLength && (
+            <StyledReadMoreButton
+              onClick={toggleReadMore}
+            >
+              {isReadMore ? " Read more" : " Show less"}
+            </StyledReadMoreButton>
+          )}
+        </StyledDescriptionContainer>
       </main>
     </>
   );
