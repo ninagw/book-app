@@ -24,14 +24,13 @@ const StyledImageContainer = styled.div`
   align-items: center;
   position: relative;
   width: 100%;
-  height: 35vh;
+  height: 250px;
   overflow: hidden;
   border-radius: 0 0 23% 23%;
   justify-content: center;
   color: var(--text-color);
   margin: 0;
   background: rgba(0, 0, 0, 0.8)
-  
 `;
 
 const StyledImageBackground = styled(Image)`
@@ -48,8 +47,6 @@ const StyledImage = styled(Image)`
     position: absolute;
     width: 120px;
     height: auto;
-    // top: 50%;
-    // left: 50%;
     z-index: 1;
 `;
 
@@ -86,7 +83,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
       <header>
       
       <StyledImageContainer>
-        <StyledLink href={`/`}><ArrowBackIcon/></StyledLink>
+        <StyledLink href={`/`} role="button" aria-label="Back button"><ArrowBackIcon/></StyledLink>
         {/* <h1>Book details</h1> */}
         <StyledImageBackground
             alt={currentBook.title}
