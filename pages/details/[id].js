@@ -7,6 +7,8 @@ import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
 import ButtonCurrentlyReading from "@/components/Buttons/ButtonCurrentlyReading";
 import ButtonAlreadyRead from "@/components/Buttons/ButtonAlreadyRead";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
+import ArrowDownIcon from "@/components/Icons/ArrowDownIcon";
+import ArrowUpIcon from "@/components/Icons/ArrowUpIcon";
 import ButtonTBR from "@/components/Buttons/ButtonTBR";
 
 const StyledLink = styled(Link)`
@@ -91,24 +93,16 @@ const StyledDescriptionContainer = styled.p`
 const StyledReadMoreButton = styled.button`
   background-color: transparent;
   border: none;
-  //border-radius: var(--border-radius);
-  //border: 1px solid var(--text-color);
   decoration: none;
-  color: var(--pink-color);
+  color: var(--text-color);
   font-size: var(--font-size-copy);
   font-weight: var(--font-weight-copy);
   text-decoration: underline;
-  //height: 35px;
-  //width: fit-content;
   display: flex;
-  //align-items: center;
+  align-items: center;
   margin-top: 5px;
   padding: 0;
-
-  //background-color: isReadMore ? "var(--pink-color)" : "var(--background-color)"};
-  // border: 1px solid var(--text-color);
-  // padding: 6px 5px 3px 5px;
-  //transition: background-color 0.4s ease;`;
+  `;
 
 export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleTBR, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
 const router = useRouter();
@@ -197,7 +191,15 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             <StyledReadMoreButton
               onClick={toggleReadMore}
             >
-              {isReadMore ? " Read more" : " Show less"}
+              {isReadMore ? (
+                <>
+                  Read more <ArrowDownIcon />
+                </>
+              ) : (
+                <>
+                  Show less <ArrowUpIcon />
+                </>
+              )}
             </StyledReadMoreButton>
           )}
         </StyledDescriptionContainer>

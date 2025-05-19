@@ -1,4 +1,4 @@
-export default function WishlistIcon({ $isActive }) {
+export default function AlreadyReadIcon({ $isActive }) {
     return (
         <svg 
             xmlns="http://www.w3.org/2000/svg" 

@@ -1,4 +1,4 @@
-export default function ArrowBackIcon() {
+export default function ArrowUpIcon() {
     return (
         <svg 
             xmlns="http://www.w3.org/2000/svg"
@@ -7,7 +7,7 @@ export default function ArrowBackIcon() {
             width="20px"
             fill="var(--text-color)"
             >
-            <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/>
+            <path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/>
         </svg>
         )
     ;
