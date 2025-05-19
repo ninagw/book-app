@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
+import Header from "@/components/Header";
 
 export default function Wishlist({
     books,
@@ -18,9 +19,7 @@ export default function Wishlist({
 
     return(
         <>
-        <header>
-        <h1>Wishlist</h1>
-      </header>
+        <Header title={"Wishlist"} />
       <main>
         {filteredBooks?.length > 0 ? (
           <BookList

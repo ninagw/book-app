@@ -20,7 +20,7 @@ export default createGlobalStyle`
   --button-text-color: #ffffff; // WHITE
   // --accent-color: #078080; 
   // --secondary-color: #f45d48;
-  
+
   --border-radius: 4px;
 
   --font-size-h1: 32px;
@@ -59,7 +59,8 @@ export default createGlobalStyle`
   header {
     width: 100%;
     // position: sticky;
-    // top: 0;    padding: 0 20px;
+    // top: 0;    
+    // padding: 0 20px;
     // z-index: 10;
   }
    

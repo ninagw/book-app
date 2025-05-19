@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
 import styled from "styled-components";
 import { useState } from "react";
+import Header from "@/components/Header";
 import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
 
 const StyledFilterButton = styled.button`
@@ -28,7 +29,8 @@ export default function Bookshelf({
     handleToggleBookmark,
     handleToggleTBR,
     handleToggleAlreadyRead,
-    handleToggleCurrentlyReading
+    handleToggleCurrentlyReading,
+    title
 }) {
     const [filter, setFilter] = useState("all-bookshelf-books");
     function handleFilter(newFilter) {
@@ -60,10 +62,8 @@ export default function Bookshelf({
       });
 
     return(
-        <>
-        <header>
-        <h1>My Bookshelf</h1>
-      </header>
+      <>
+      <Header title={"My Bookshelf"} />
       <main>
           <StyledButtonWrapper>
           <StyledFilterButton

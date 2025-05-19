@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
+import Header from "@/components/Header";
 import SearchBar from "@/components/Searchbar";
 
 export default function HomePage({ books, booksData, handleToggleBookmark }) {
@@ -38,9 +39,7 @@ export default function HomePage({ books, booksData, handleToggleBookmark }) {
 
   return (
     <>
-      <header>
-        <h1>Book Shop</h1>
-      </header>
+      <Header title={"Book Shop"} />
       <main>
         {/* <p>Searching for: {searchTerm}</p>  // Zeigt den Suchstatus */}
         <SearchBar
