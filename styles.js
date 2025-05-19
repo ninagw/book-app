@@ -29,10 +29,10 @@ export default createGlobalStyle`
   --font-weight-h2: 700;
   --line-height-h2: 40px;
   --font-size-h3: 22px;
-  --font-weight-h3: 700;
+  --font-weight-h3: 500;
   --line-height-h3: 30px;
   --font-size-h4: 18px;
-  --font-weight-h4: 700;
+  --font-weight-h4: 400;
   --line-height-h4: 24px;
   --font-size-copy: 18px;
   --font-weight-copy: 300;

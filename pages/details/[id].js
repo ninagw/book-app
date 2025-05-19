@@ -67,8 +67,7 @@ const StyledHeadlineContainer = styled.section`
   flex-direction: column;
   align-items: center;
   line-height: 0;
-  font-weight: 500;
-  padding: 0;
+  padding-top: 20px;
   margin: 0;`
 
 const StyledStatsContainer = styled.section`
@@ -79,7 +78,7 @@ const StyledStatsContainer = styled.section`
   justify-content: space-evenly;`
 
 const StyledDescriptionContainer = styled.p`
- line-height: var(--line-height-copy);
+  line-height: var(--line-height-copy);
   margin: 0 20px;`
 
 export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleTBR, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
