@@ -45,15 +45,23 @@ const StyledImageBackground = styled(Image)`
 
 const StyledImage = styled(Image)`
     position: absolute;
-    width: 120px;
+    width: 130px;
     height: auto;
     z-index: 1;
 `;
 
 const StyledButtonContainer = styled.section`
+  position: absolute;
+  top: 30px;
+  right: 30px;
   display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
   gap: 10px;
-  padding-top: 10px;
+  // padding: 10px;
+  z-index: 2;
+  
   `;
 
 export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleTBR, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
@@ -97,11 +105,6 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
             width={70}
             src={currentBook.cover}
             id={currentBook.id}/>
-        {/* <h2>{currentBook.title}</h2> */}
-
-      </StyledImageContainer>
-      </header>
-      <main>
         <StyledButtonContainer>
           <ButtonWishlist
               handleToggleBookmark={handleToggleBookmark}
@@ -124,10 +127,14 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
               $isAlreadyRead={currentBookData?.isAlreadyRead}
               booksData={booksData}/>
         </StyledButtonContainer>
+      </StyledImageContainer>
+      </header>
+      <main>
+      
         <h2>{currentBook.title}</h2>
         <p>{currentBook.author}</p>
         <p>{currentBook.publishYear}</p>
-        <p>{currentBook.pages}</p>
+        <p>{currentBook.pages} pages</p>
         <p>{currentBook.genre}</p>
         <p>{currentBook.description}</p>
       </main>

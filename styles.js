@@ -75,7 +75,6 @@ export default createGlobalStyle`
     font-family: ${robotoMedium.style.fontFamily}, 'Roboto', sans-serif;
     font-size: var(--font-size-h2);
     font-weight: var(--font-weight-h2);
-    line-height: var(--line-height-h2);
     }
 
   p {
