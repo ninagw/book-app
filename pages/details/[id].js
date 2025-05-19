@@ -59,10 +59,28 @@ const StyledButtonContainer = styled.section`
   justify-content: end;
   align-items: end;
   gap: 10px;
-  // padding: 10px;
   z-index: 2;
-  
   `;
+
+const StyledHeadlineContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;`
+
+const StyledStatsContainer = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;`
+
+const StyledDescriptionContainer = styled.p`
+ line-height: var(--line-height-copy);
+  margin: 0 20px;`
 
 export default function BookDetailsPage({books, booksData, handleToggleBookmark, handleToggleTBR, handleToggleAlreadyRead, handleToggleCurrentlyReading}) {
 const router = useRouter();
@@ -89,10 +107,8 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
   return (
     <>
       <header>
-      
       <StyledImageContainer>
         <StyledLink href={`/`} role="button" aria-label="Back button"><ArrowBackIcon/></StyledLink>
-        {/* <h1>Book details</h1> */}
         <StyledImageBackground
             alt={currentBook.title}
             height={100}
@@ -130,13 +146,16 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
       </StyledImageContainer>
       </header>
       <main>
-      
-        <h2>{currentBook.title}</h2>
-        <p>{currentBook.author}</p>
-        <p>{currentBook.publishYear}</p>
-        <p>{currentBook.pages} pages</p>
-        <p>{currentBook.genre}</p>
-        <p>{currentBook.description}</p>
+        <StyledHeadlineContainer>
+          <h2>{currentBook.title}</h2>
+          <p>by {currentBook.author}</p>
+        </StyledHeadlineContainer>
+        <StyledStatsContainer>
+          <p>{currentBook.publishYear}</p>
+          <p>{currentBook.pages} pages</p>
+          <p>{currentBook.genre}</p>
+        </StyledStatsContainer>
+        <StyledDescriptionContainer>{currentBook.description}</StyledDescriptionContainer>
       </main>
     </>
   );

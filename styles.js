@@ -28,6 +28,12 @@ export default createGlobalStyle`
   --font-size-h2: 28px;
   --font-weight-h2: 700;
   --line-height-h2: 40px;
+  --font-size-h3: 22px;
+  --font-weight-h3: 700;
+  --line-height-h3: 30px;
+  --font-size-h4: 18px;
+  --font-weight-h4: 700;
+  --line-height-h4: 24px;
   --font-size-copy: 18px;
   --font-weight-copy: 300;
   --line-height-copy: 24px;
@@ -52,7 +58,7 @@ export default createGlobalStyle`
   header {
     width: 100%;
     // position: sticky;
-    // top: 0;
+    // top: 0;    padding: 0 20px;
     // z-index: 10;
   }
    
@@ -71,15 +77,26 @@ export default createGlobalStyle`
     margin: 0;
   }
 
-  h2, h3 {
+  h2 {
     font-family: ${robotoMedium.style.fontFamily}, 'Roboto', sans-serif;
     font-size: var(--font-size-h2);
     font-weight: var(--font-weight-h2);
-    }
+  }
+  
+  h3 {
+    font-family: ${robotoMedium.style.fontFamily}, 'Roboto', sans-serif;
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-h3);
+  }
+
+  h4 {
+    font-family: ${robotoMedium.style.fontFamily}, 'Roboto', sans-serif;
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-h4);
+  }
 
   p {
     font-weight: var(--font-weight-copy);
-    line-height: var(--line-height-copy);
     font-size: var(--font-size-copy);
-    }
+  }
 `;
