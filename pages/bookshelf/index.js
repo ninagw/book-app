@@ -3,30 +3,31 @@ import BookList from "@/components/BookList";
 import styled from "styled-components";
 import { useState } from "react";
 import Header from "@/components/Header";
-import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
 
 const StyledFilterButton = styled.button`
   border-style: none;
-  border-radius: 4px;
-  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.19);
-  font-size: 16px;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  display: flex;;
+  aligm-items: center;
+  // box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.19);
   background-color: ${({ $isActive }) =>
     $isActive ? "var(--text-color)" : "var(--background-color)"};
   color: ${({ $isActive }) =>
     $isActive ? "var(--background-color)" : "var(--text-color)"};
   padding: 4px;
+  font-size: 16px;
+  font-weight: 200;
 `;
 
 const StyledButtonWrapper = styled.section`
   display: flex;
-  gap: 5px;
   padding: 8px;
 `;
 
 export default function Bookshelf({
     books,
     booksData,
-    handleToggleBookmark,
     handleToggleTBR,
     handleToggleAlreadyRead,
     handleToggleCurrentlyReading,
@@ -42,10 +43,6 @@ export default function Bookshelf({
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isTBR
           );
-        // } else if (filter === "wishlist-books") {
-        //   return booksData.find(
-        //     (booksData) => booksData.id === book.id && booksData.isBookmarked
-        //   );
         } else if (filter === "currently-reading-books") {
           return booksData.find(
             (booksData) => booksData.id === book.id && booksData.isCurrentlyReading
@@ -76,16 +73,6 @@ export default function Bookshelf({
               >
                 All books
             </StyledFilterButton>
-            {/* <StyledFilterButton
-                type="button"
-                aria-label="shows list of books on your wishlist"
-                onClick={() => {
-                  handleFilter("wishlist-books");
-                }}
-                $isActive={filter === "wishlist-books" ? true : false}
-              >
-                My wishlist
-            </StyledFilterButton> */}
             <StyledFilterButton
                 type="button"
                 aria-label="shows list of books on your TBR"
@@ -104,7 +91,7 @@ export default function Bookshelf({
                 }}
                 $isActive={filter === "currently-reading-books" ? true : false}
               >
-                Books currently reading
+                Currently reading
             </StyledFilterButton>
             <StyledFilterButton
                 type="button"
@@ -114,14 +101,13 @@ export default function Bookshelf({
                 }}
                 $isActive={filter === "already-read-books" ? true : false}
               >
-                Books already read
+                Already read
             </StyledFilterButton>
           </StyledButtonWrapper>
         {filteredBooks?.length > 0 ? (
           <BookList
             books={filteredBooks}
             booksData={booksData}
-            // handleToggleBookmark={handleToggleBookmark}
             handleToggleTBR={handleToggleTBR}
             handleToggleAlreadyRead={handleToggleAlreadyRead}
             handleToggleCurrentlyReading={handleToggleCurrentlyReading}
