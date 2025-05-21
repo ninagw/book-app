@@ -8,7 +8,7 @@ const StyledFilterButton = styled.button`
   border-style: none;
   border-top: 1px solid var(--text-color);
   border-bottom: 1px solid var(--text-color);
-  display: flex;;
+  display: flex;
   aligm-items: center;
   // box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.19);
   background-color: ${({ $isActive }) =>

@@ -11,6 +11,7 @@ import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
 import ArrowDownIcon from "@/components/Icons/ArrowDownIcon";
 import ArrowUpIcon from "@/components/Icons/ArrowUpIcon";
 import ProgressBar from "@/components/ProgressBar";
+import StarRating from "@/components/StarRating";
 
 const StyledLink = styled(Link)`
   color: var(--text-color);
@@ -182,6 +183,7 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
         {currentBookData?.isCurrentlyReading && (
         <ProgressBar pages={currentBook.pages} id={id}></ProgressBar>
         )}
+        {currentBookData?.isAlreadyRead && <StarRating id={id} />}
         <StyledStatsContainer>
           <p>{currentBook.publishYear}</p>
           <p>{currentBook.pages} pages</p>

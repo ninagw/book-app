@@ -4,10 +4,9 @@ import useLocalStorageState from "use-local-storage-state";
 
 const ProgressBarWrapper = styled.div`
   position: relative;
-  width: 60%;
+  width: 70%;
   max-width: 400px;
-  border-radius: 10px;
-  margin: 0 auto;
+  margin: 10px;
 `;
 
 const ProgressBarFill = styled.div`
