@@ -6,10 +6,11 @@ import styled from "styled-components";
 import ButtonWishlist from "@/components/Buttons/ButtonWishlist";
 import ButtonCurrentlyReading from "@/components/Buttons/ButtonCurrentlyReading";
 import ButtonAlreadyRead from "@/components/Buttons/ButtonAlreadyRead";
+import ButtonTBR from "@/components/Buttons/ButtonTBR";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
 import ArrowDownIcon from "@/components/Icons/ArrowDownIcon";
 import ArrowUpIcon from "@/components/Icons/ArrowUpIcon";
-import ButtonTBR from "@/components/Buttons/ButtonTBR";
+import ProgressBar from "@/components/ProgressBar";
 
 const StyledLink = styled(Link)`
   color: var(--text-color);
@@ -178,6 +179,9 @@ console.log("ROUTER QUERY ID: ", id); // aktuell nur first book id, da hart geco
           <h2>{currentBook.title}</h2>
           <p>by {currentBook.author}</p>
         </StyledHeadlineContainer>
+        {currentBookData?.isCurrentlyReading && (
+        <ProgressBar pages={currentBook.pages} id={id}></ProgressBar>
+        )}
         <StyledStatsContainer>
           <p>{currentBook.publishYear}</p>
           <p>{currentBook.pages} pages</p>
