@@ -87,9 +87,7 @@ const StyledStatsContainer = styled.section`
 const StyledDescriptionContainer = styled.p`
   line-height: var(--line-height-copy);
   text-align: justify;
-  margin: 0 20px;
-  //display: flex;
-  //flex-direction: column;
+  margin: 0 20px 35px 20px;
 `;
 
 const StyledReadMoreButton = styled.button`
