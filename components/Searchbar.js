@@ -5,7 +5,7 @@ const SearchInput = styled.input`
   font-size: 1rem;
   display: flex;
   margin: auto;
-  width: 60%;
+  width: 70%;
   border-style: none;
   border-radius: var(--border-radius);
 `;
