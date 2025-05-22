@@ -34,11 +34,6 @@ self.__BUILD_MANIFEST = {
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/details/[id].js"
-    ],
-    "/wishlist": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/wishlist.js"
     ]
   },
   "ampFirstPages": []
