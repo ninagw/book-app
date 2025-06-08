@@ -61,7 +61,7 @@ export default function BookshelfPage({
       <>
       <Header title={"My Bookshelf"} />
       <main>
-          <p>Achievements: </p>
+          {/* <p>Achievements: </p> */}
           <StyledButtonWrapper>
           <StyledFilterButton
                 type="button"
