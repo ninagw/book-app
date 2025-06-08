@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import BookshopIcon from "@/components/Icons/BookshopIcon";
 import WishlistIcon from "@/components/Icons/WishlistIcon";
+import TrophyIcon from "@/components/Icons/TrophyIcon";
 import BookshelfIcon from "@/components/Icons/BookshelfIcon";
 
 const StyledList = styled.ul`
@@ -62,7 +63,7 @@ export default function Navigation({isBookmarked}) {
             </StyledListElement>
             <StyledListElement $isActive={router.pathname === "/challenges"}>
                 <NavigationLink $isActive={router.pathname === "/challenges"} href="/challenges">
-                    <StyledNavContainer><BookshelfIcon $isActive={router.pathname === "/challenges"}/>Challenges</StyledNavContainer>
+                    <StyledNavContainer><TrophyIcon $isActive={router.pathname === "/challenges"}/>Challenges</StyledNavContainer>
                 </NavigationLink>
             </StyledListElement>
             <StyledListElement $isActive={router.pathname === "/bookshelf"}>
