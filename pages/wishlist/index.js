@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import BookList from "@/components/BookList";
 import Header from "@/components/Header";
 
-export default function Wishlist({
+export default function WishlistPage({
     books,
     booksData,
     handleToggleBookmark,

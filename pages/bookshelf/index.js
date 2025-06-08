@@ -25,7 +25,7 @@ const StyledButtonWrapper = styled.section`
   padding: 8px;
 `;
 
-export default function Bookshelf({
+export default function BookshelfPage({
     books,
     booksData,
     handleToggleTBR,
