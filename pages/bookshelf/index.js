@@ -3,6 +3,7 @@ import BookList from "@/components/BookList";
 import Header from "@/components/Header";
 import styled from "styled-components";
 import { useState } from "react";
+import TrophyIcon from "@/components/Icons/TrophyIcon";
 
 const StyledFilterButton = styled.button`
   border-style: none;
