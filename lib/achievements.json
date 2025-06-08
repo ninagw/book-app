@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "name": "10 books read",
+      "description": "Read 10 books.",
+      "icon": "/assets/icons/trophy.png",
+      "achievementGoal": 10,
+      "currentAmount": 0,
+      "unlocked": false
+    },
+    {
+      "id": 2,
+      "name": "Create first book challenge",
+      "description": "Create your first book challenge.",
+      "icon": "/assets/icons/trophy.png",
+      "achievementGoal": 1,
+      "currentAmount": 0,
+      "unlocked": false
+    },
+    {
+      "id": 3,
+      "name": "Finish one book challenge",
+      "description": "Finish your first book challenge.",
+      "icon": "/assets/icons/trophy.png",
+      "achievementGoal": 1,
+      "currentAmount": 0,
+      "unlocked": false
+    }
+  ]
