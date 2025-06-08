@@ -60,6 +60,11 @@ export default function Navigation({isBookmarked}) {
                     <StyledNavContainer><WishlistIcon $isActive={router.pathname === "/wishlist"}/>Wishlist</StyledNavContainer>
                 </NavigationLink>
             </StyledListElement>
+            <StyledListElement $isActive={router.pathname === "/challenges"}>
+                <NavigationLink $isActive={router.pathname === "/challenges"} href="/challenges">
+                    <StyledNavContainer><BookshelfIcon $isActive={router.pathname === "/challenges"}/>Challenges</StyledNavContainer>
+                </NavigationLink>
+            </StyledListElement>
             <StyledListElement $isActive={router.pathname === "/bookshelf"}>
                 <NavigationLink $isActive={router.pathname === "/bookshelf"} href="/bookshelf">
                     <StyledNavContainer><BookshelfIcon $isActive={router.pathname === "/bookshelf"}/>Bookshelf</StyledNavContainer>
