@@ -71,9 +71,11 @@ const StyledHeadlineContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 0;
+  justify-content: center;
   padding-top: 20px;
-  margin: 0;
+  margin: 0 20px;
+  height: fit-content;
+  line-height: 0;
   `;
 
 const StyledStatsContainer = styled.section`
