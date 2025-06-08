@@ -1,6 +1,5 @@
 import { useAchievementStore } from "@/hooks/stores/achievementStore";
 import Link from "next/link";
-import Header from "@/components/Header";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
 import styled from "styled-components";
 
@@ -27,7 +26,7 @@ const StyledSection = styled.section`
   overflow-y: auto;
 `;
 
-export default function Achievements({}) {
+export default function Achievements({  }) {
   const { allAchievements } = useAchievementStore();
 
   return (
@@ -37,10 +36,12 @@ export default function Achievements({}) {
         <h1>Achievements</h1>
       </StyledHeader>
       
-      {/* <main>
+      <main>
         <StyledSection>
           {allAchievements.map((achievement) => (
-            <AchievementArticle
+            console.log("Achievements data:", achievements),
+
+            <article
               key={achievement.id}
               name={achievement.name}
               icon={achievement.icon}
@@ -50,7 +51,7 @@ export default function Achievements({}) {
             />
           ))}
         </StyledSection>
-      </main> */}
+      </main>
     </>
   );
 }

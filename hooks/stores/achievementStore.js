@@ -1,6 +1,10 @@
 import { achievements } from "@/lib/achievements";
 import { create } from "zustand";
 
+// const initialAchievements = achievements.map((achievement) => {
+//     return { id: achievement.id, name: achievement.name, description: achievement.description, achievementGoal: achievement.achievementGoal, currentAmount: 0, unlocked: false};
+//   });
+
 export const useAchievementStore = create((set) => ({
   allAchievements: achievements,
 
