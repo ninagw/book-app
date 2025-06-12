@@ -22,11 +22,6 @@ const StyledLink = styled(Link)`
     justify-content: center;
 `;
 
-const StyledSection = styled.section`
-  height: calc(100vh - 120px);
-  overflow-y: auto;
-`;
-
 export default function AchievementsPage({  }) {
   const { allAchievements } = useAchievementStore();
   console.log("Achievements data:", allAchievements)

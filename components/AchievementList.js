@@ -14,7 +14,7 @@ const StyledAchievementArticle = styled.article`
   color: ${(unlocked) =>
     unlocked ? "var(--text-color)" : "var(--text-color)"};
   background-color: ${(unlocked) =>
-    unlocked ? "var(--lightgrey-color)" : "var(--lightgrey-color)"};
+    unlocked ? "var(--lightgrey-color)" : "var(--background-color)"};
 `;
 
 const StyledAchievementText = styled.p`
