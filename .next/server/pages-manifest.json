@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/achievements": "pages/achievements.js",
-  "/details/[id]": "pages/details/[id].js",
-  "/": "pages/index.js",
   "/challenges": "pages/challenges.js",
-  "/bookshelf": "pages/bookshelf.js"
+  "/": "pages/index.js",
+  "/achievements": "pages/achievements.js"
 }

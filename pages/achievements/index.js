@@ -28,6 +28,8 @@ const StyledSection = styled.section`
 
 export default function Achievements({  }) {
   const { allAchievements } = useAchievementStore();
+  console.log("Achievements data:", allAchievements)
+
 
   return (
     <>
@@ -37,10 +39,8 @@ export default function Achievements({  }) {
       </StyledHeader>
       
       <main>
-        <StyledSection>
+        <section>
           {allAchievements.map((achievement) => (
-            console.log("Achievements data:", achievements),
-
             <article
               key={achievement.id}
               name={achievement.name}
@@ -50,7 +50,7 @@ export default function Achievements({  }) {
               unlocked={achievement.unlocked}
             />
           ))}
-        </StyledSection>
+        </section>
       </main>
     </>
   );

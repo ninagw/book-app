@@ -1,4 +1,4 @@
-import { achievements } from "@/lib/achievements";
+import achievements from "@/lib/achievements";
 import { create } from "zustand";
 
 // const initialAchievements = achievements.map((achievement) => {
