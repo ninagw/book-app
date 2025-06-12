@@ -1,5 +1,6 @@
 import { useAchievementStore } from "@/hooks/stores/achievementStore";
 import Link from "next/link";
+import AchievementList from "@/components/AchievementList";
 import ArrowBackIcon from "@/components/Icons/ArrowBackIcon";
 import styled from "styled-components";
 
@@ -26,7 +27,7 @@ const StyledSection = styled.section`
   overflow-y: auto;
 `;
 
-export default function Achievements({  }) {
+export default function AchievementsPage({  }) {
   const { allAchievements } = useAchievementStore();
   console.log("Achievements data:", allAchievements)
 
@@ -41,7 +42,7 @@ export default function Achievements({  }) {
       <main>
         <section>
           {allAchievements.map((achievement) => (
-            <article
+            <AchievementList
               key={achievement.id}
               name={achievement.name}
               icon={achievement.icon}
