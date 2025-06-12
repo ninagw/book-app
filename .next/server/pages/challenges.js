@@ -89,7 +89,7 @@ eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__
   \*******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('[{"id":1,"name":"10 books read","description":"Read 10 books.","icon":"/assets/icons/trophy.png","achievementGoal":10,"currentAmount":0,"unlocked":false},{"id":2,"name":"Create first book challenge","description":"Create your first book challenge.","icon":"/assets/icons/trophy.png","achievementGoal":1,"currentAmount":0,"unlocked":false},{"id":3,"name":"Finish one book challenge","description":"Finish your first book challenge.","icon":"/assets/icons/trophy.png","achievementGoal":1,"currentAmount":0,"unlocked":false}]');
+module.exports = /*#__PURE__*/JSON.parse('[{"id":1,"name":"10 books read","description":"Read 10 books.","icon":"/assets/icons/trophy.png","achievementGoal":10,"currentAmount":0,"unlocked":false},{"id":2,"name":"Create book challenge","description":"Create your first book challenge.","icon":"/assets/icons/trophy.png","achievementGoal":1,"currentAmount":0,"unlocked":false},{"id":3,"name":"Finish one book challenge","description":"Finish your first book challenge.","icon":"/assets/icons/trophy.png","achievementGoal":1,"currentAmount":0,"unlocked":false}]');
 
 /***/ }),
 
