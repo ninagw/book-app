@@ -5,10 +5,6 @@ import TrophyIcon from "@/components/Icons/TrophyIcon";
 import Link from "next/link";
 import { useAchievementStore } from "@/hooks/stores/achievementStore";
 
-const StyledSection = styled.section`
-  color: var(--text-color);
-`;
-
 const StyledAchievementsLink = styled(Link)`
   // position: absolute;
   left: 20px;
@@ -33,12 +29,11 @@ export default function ChallengesPage({}) {
       <>
       <Header title={"Book Challenges"} />
       <main>
-       <StyledSection>
           <StyledAchievementsLink href="/achievements" role="button" aria-label="View my achievements">
             <TrophyIcon />
             {solvedAchievements.length} / {allAchievements.length}
           </StyledAchievementsLink>
-       </StyledSection>
+          <p>Create your own book challenges. Or have fun mastering the preinstalled achievements, click the trophy icon.</p>
       </main>
       <Navigation />
       </>
