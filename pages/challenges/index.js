@@ -18,12 +18,12 @@ const StyledAchievementsLink = styled(Link)`
 
 export default function ChallengesPage({}) {
   const allAchievements = useAchievementStore((state) => state.allAchievements);
-  const updateAchievementCurrentAmount = useAchievementStore(
-    (state) => state.updateAchievementCurrentAmount
-  );
-  const solvedAchievements = allAchievements.filter(
-    (achievement) => achievement.unlocked
-  );
+  const updateAchievementCurrentAmount = useAchievementStore((state) => state.updateAchievementCurrentAmount);
+  const solvedAchievements = allAchievements.filter((achievement) => achievement.unlocked);
+
+  console.log("allAchievements: ", allAchievements);
+  console.log("updateAchievementCurrentAmount: ", updateAchievementCurrentAmount);
+  console.log("solvedAchievements: ", solvedAchievements);  
 
     return(
       <>
@@ -31,9 +31,10 @@ export default function ChallengesPage({}) {
       <main>
           <StyledAchievementsLink href="/achievements" role="button" aria-label="View my achievements">
             <TrophyIcon />
-            {solvedAchievements.length} / {allAchievements.length}
+            Achievements: {solvedAchievements.length} / {allAchievements.length}
+            {/* {currentAmount}/{achievementGoal} */}
           </StyledAchievementsLink>
-          <p>Create your own book challenges. Or have fun mastering the preinstalled achievements, click the trophy icon.</p>
+          <p>Create your own book challenges. Or have fun mastering the preinstalled achievements above.</p>
       </main>
       <Navigation />
       </>
