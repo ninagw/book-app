@@ -20,11 +20,6 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/achievements": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/achievements.js"
-    ],
     "/challenges": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
