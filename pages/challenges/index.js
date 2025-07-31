@@ -21,8 +21,10 @@ export default function ChallengesPage({}) {
   const updateAchievementCurrentAmount = useAchievementStore((state) => state.updateAchievementCurrentAmount);
   const solvedAchievements = allAchievements.filter((achievement) => achievement.unlocked);
 
+  //updateAchievementCurrentAmount();
+
   console.log("allAchievements: ", allAchievements);
-  // console.log("updateAchievementCurrentAmount: ", updateAchievementCurrentAmount);
+  console.log("updateAchievementCurrentAmount: ", updateAchievementCurrentAmount);
   console.log("solvedAchievements: ", solvedAchievements);  
 
     return(
