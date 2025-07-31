@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "name": "Create book challenge",
+      "name": "Created first challenge",
       "description": "Create your first book challenge.",
       "icon": "/assets/icons/trophy.png",
       "achievementGoal": 1,
@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "name": "Finish one book challenge",
+      "name": "Finished first challenge",
       "description": "Finish your first book challenge.",
       "icon": "/assets/icons/trophy.png",
       "achievementGoal": 1,
