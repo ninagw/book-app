@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Navigation from "@/components/Navigation";
 import Header from "@/components/Header";
+import AchievementList from "@/components/AchievementList";
 import TrophyIcon from "@/components/Icons/TrophyIcon";
 import Link from "next/link";
 import { useAchievementStore } from "@/hooks/stores/achievementStore";
@@ -35,6 +36,16 @@ export default function ChallengesPage({}) {
             {/* {currentAmount}/{achievementGoal} */}
           </StyledAchievementsLink>
           <p>Create your own book challenges. Or have fun mastering the preinstalled achievements above.</p>
+          {allAchievements.map((achievement) => (
+                      <AchievementList
+                        key={achievement.id}
+                        name={achievement.name}
+                        icon={achievement.icon}
+                        description={achievement.description}
+                        id={achievement.id}
+                        unlocked={achievement.unlocked}
+                      />
+                    ))}
       </main>
       <Navigation />
       </>
