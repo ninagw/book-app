@@ -4,6 +4,8 @@ import Header from "@/components/Header";
 import AchievementList from "@/components/AchievementList";
 import TrophyIcon from "@/components/Icons/TrophyIcon";
 import { useAchievementStore } from "@/hooks/stores/achievementStore";
+import {useLocalStorage} from "@/hooks/useLocalStorage";
+import { useChallengeStore } from "@/hooks/useChallengeStore";
 
 const StyledAchievementsScore = styled.p`
   // position: absolute;
@@ -17,14 +19,17 @@ const StyledAchievementsScore = styled.p`
 `;
 
 export default function ChallengesPage({}) {
-  const allAchievements = useAchievementStore((state) => state.allAchievements);
-  const updateAchievementCurrentAmount = useAchievementStore((state) => state.updateAchievementCurrentAmount);
+  const { allChallenges } = useChallengeStore();
+  const { allAchievements } = useAchievementStore();
+  // const allAchievements = useAchievementStore((state) => state.allAchievements);
+  // const updateAchievementCurrentAmount = useAchievementStore((state) => state.updateAchievementCurrentAmount);
+  // const updatedAndUnlockedAchievements = useAchievementStore((state) => state.updatedAchievementsWithNewKeys);
   const solvedAchievements = allAchievements.filter((achievement) => achievement.unlocked);
-
-  //updateAchievementCurrentAmount();
+  // updateAchievementCurrentAmount(achievement.id, amount); diese Funktion wird aufgerufen, um den Fortschritt eines Erfolgs zu aktualisieren.
 
   console.log("allAchievements: ", allAchievements);
-  console.log("updateAchievementCurrentAmount: ", updateAchievementCurrentAmount);
+  // console.log("updateAchievementCurrentAmount: ", updateAchievementCurrentAmount);
+  // console.log("updatedAndUnlockedAchievements: ", updatedAndUnlockedAchievements);
   console.log("solvedAchievements: ", solvedAchievements);  
 
     return(

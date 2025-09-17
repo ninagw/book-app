@@ -35,7 +35,7 @@ const StyledName = styled.h3`
   margin-bottom: 0;
 `;
 
-export default function Achievement({
+export default function AchievementList({
   id,
   name,
   icon,

@@ -1,12 +1,14 @@
-import achievements from "@/lib/achievements";
+import achievements from "@/lib/challenges.json";
 import { create } from "zustand";
+import {useLocalStorage} from "@/hooks/useLocalStorage";
 
 const initialAchievements = achievements.map((achievement) => {
-    return { id: achievement.id, name: achievement.name, description: achievement.description, achievementGoal: achievement.achievementGoal, currentAmount: 0, unlocked: false};
+    return { id: achievement.id, name: achievement.name, description: achievement.description, icon: achievement.icon, achievementGoal: achievement.achievementGoal, currentAmount: achievement.currentAmount, unlocked: achievement.unlocked};
   });
 
 export const useAchievementStore = create((set) => ({
-  allAchievements: achievements,
+
+    allAchievements: achievements,
 
   // setAllAchievements ersetzt die Liste der Erfolge komplett mit einer neuen.
   setAllAchievements: (newAchievements) => {
@@ -44,6 +46,9 @@ export const useAchievementStore = create((set) => ({
             achievement.id === id &&
             achievement.currentAmount >= achievement.achievementGoal
           ) {
+            console.log("Achievement ID:", id);
+            console.log("Current Amount:", achievement.currentAmount);
+            console.log("Achievement Goal:", achievement.achievementGoal);
             return {
               ...achievement,
               unlocked: true,
